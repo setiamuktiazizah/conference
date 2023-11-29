@@ -20,8 +20,10 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
-            $table->foreign('id_article')->references('id')->on('articles');
         });
+        Schema::table('article_histories', function (Blueprint $table) {
+            $table->foreign('id_article')->references('id')->on('articles');
+        }); 
     }
 
     /**
