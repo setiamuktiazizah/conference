@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_converence');
+            $table->unsignedBigInteger('id_conference');
             $table->unsignedBigInteger('id_article');
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_form');
@@ -22,6 +22,10 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
+            $table->foreign('id_conference')->references('id')->on('conferences');
+            $table->foreign('id_article')->references('id')->on('articles');
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_form')->references('id')->on('forms');
         });
     }
 

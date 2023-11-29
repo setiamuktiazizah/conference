@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
+            $table->foreign('id_conference')->references('id')->on('conferences');
         });
     }
 
