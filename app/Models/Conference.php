@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Conference extends Model
 {
     use HasFactory;
+
+    public function Reviewer(): HasMany
+    {
+        return $this->hasMany(Reviewer::class);
+    }
 }

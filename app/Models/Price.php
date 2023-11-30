@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Price extends Model
 {
     use HasFactory;
+
+    public function Conference(): HasOne
+    {
+        return $this->hasOne(Conference::class);
+    }
 }

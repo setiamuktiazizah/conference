@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ArticleHistory extends Model
 {
     use HasFactory;
+
+    public function Article(): BelongsToMany
+    {
+        return $this->belongsToMany(Article::class);
+    }
 }

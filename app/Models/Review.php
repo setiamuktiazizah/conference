@@ -8,4 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     use HasFactory;
+
+    public function Conference(): HasMany
+    {
+        return $this->hasMany(Conference::class);
+    }
+    public function Article(): HasMany
+    {
+        return $this->hasMany(Article::class);
+    }
+    public function User(): HasMany
+    {
+        return $this->hasMany(User::class);
+    }
+    public function Form(): HasMany
+    {
+        return $this->hasMany(Form::class);
+    }
 }
