@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('conferences', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_reviewer');
             $table->string('name');
             $table->string('venue');
             $table->string('type');
@@ -23,6 +24,9 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
+        });
+        Schema::table('conferences', function (Blueprint $table) {
+            $table->foreign('id_reviewer')->references('id')->on('reviewers');
         });
     }
 
