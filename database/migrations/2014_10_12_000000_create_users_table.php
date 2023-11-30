@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('institution');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

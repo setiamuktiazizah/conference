@@ -24,9 +24,6 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
-        Schema::table('prices', function (Blueprint $table) {
-            $table->foreign('id_conference')->references('id')->on('conferences');
-        }); 
     }
 
     /**

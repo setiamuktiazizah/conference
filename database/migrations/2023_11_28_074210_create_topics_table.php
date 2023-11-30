@@ -19,9 +19,6 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
-        Schema::table('topics', function (Blueprint $table) {
-            $table->foreign('id_conference')->references('id')->on('conferences');
-        }); 
     }
 
     /**

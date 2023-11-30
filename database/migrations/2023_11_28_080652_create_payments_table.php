@@ -23,10 +23,6 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
-        Schema::table('payments', function (Blueprint $table) {
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_price')->references('id')->on('prices');
-        }); 
     }
 
     /**

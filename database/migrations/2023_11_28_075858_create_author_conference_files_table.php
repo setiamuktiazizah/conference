@@ -20,10 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
-        Schema::table('author_conference_files', function (Blueprint $table) {
-            $table->foreign('id_article')->references('id')->on('articles');
-            $table->foreign('id_filetype')->references('id')->on('conference_file_types');
-        }); 
     }
 
     /**

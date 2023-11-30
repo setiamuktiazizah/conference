@@ -23,12 +23,6 @@ return new class extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
         });
-        Schema::table('reviews', function (Blueprint $table) {
-            $table->foreign('id_conference')->references('id')->on('conferences');
-            $table->foreign('id_article')->references('id')->on('articles');
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_form')->references('id')->on('forms');
-        });
     }
 
     /**
