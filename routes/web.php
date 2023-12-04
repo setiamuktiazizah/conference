@@ -17,7 +17,23 @@ use App\Http\Controllers\SponsorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/pricing', function () {
+    return view('pricing');
+});
+
+Route::get('/services', function () {
+    return view('services');
 });
 
 Route::get('upload', [GDriveController::class, 'upload']);
