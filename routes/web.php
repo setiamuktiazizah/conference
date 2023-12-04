@@ -36,6 +36,10 @@ Route::get('/services', function () {
     return view('services');
 });
 
+Route::get('/admin', function () {
+    return view('admin');
+});
+
 Route::get('upload', [GDriveController::class, 'upload']);
 Route::get('get-image', [GDriveController::class, 'getImage']);
 
