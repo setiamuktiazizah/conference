@@ -76,7 +76,7 @@
             </ul>
           </li>
           <li><a href="/contact">Contact</a></li>
-          <li><a class="get-a-quote" href="get-a-quote.html">Get a Quote</a></li>
+          <li><a class="get-a-quote" href="/login">Login</a></li>
         </ul>
       </nav><!-- .navbar -->
 

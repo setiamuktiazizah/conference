@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "ramsey/uuid": "^4.7",
+        "twbs/bootstrap": "5.3.2",
         "yaza/laravel-google-drive-storage": "^2.0"
     },
     "require-dev": {
