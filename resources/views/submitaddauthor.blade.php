@@ -134,14 +134,18 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row gx-5">
-          <div class="col form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-              Add yourself as author
-            </label>
-          </div>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Author
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">Author 1</a></li>
+                    <li><a class="dropdown-item" href="#">Author 2</a></li>
+                    <li><a class="dropdown-item" href="#">Author 3</a></li>
+                </ul>
+            </div>
           <div class="col">
-              <a href="{{url('submituploadreviewmanuscript')}}"><button type="button" class="btn btn-primary">Register Paper</button></a>
+              <a href="{{url('submituploadreviewmanuscript')}}"><button type="button" class="btn btn-primary">Add Author</button></a>
           </div>
         </div>
       </div>
