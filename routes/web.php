@@ -56,10 +56,14 @@ Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');
 });
 
-Route::get('upload', [GDriveController::class, 'upload']);
-Route::get('get-image', [GDriveController::class, 'getImage']);
+Route::get('/paperinfo', function () {
+    return view('paperinfo');
+});
+
+// Route::get('upload', [GDriveController::class, 'upload']);
+// Route::get('get-image', [GDriveController::class, 'getImage']);
 
 
 
-Route::resource('article', ArticleController::class);
-Route::resource('sponsor', SponsorController::class);
+// Route::resource('article', ArticleController::class);
+// Route::resource('sponsor', SponsorController::class);

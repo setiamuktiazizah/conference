@@ -43,27 +43,27 @@
           <table class="table table-bordered">
               <thead>
                   <tr>
-                  <th scope="col">Area</th>
                   <th scope="col">Conference</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Details</th>
-                  <th scope="col">Where and When</th>
-                  <th scope="col">Deadlines</th>
-                  <th scope="col">submit</th>
+                  <th scope="col">Paper Title</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Revision</th>
+                  <th scope="col">Add and Delete Author</th>
+                  <th scope="col">Payment Status</th>
+                  <th scope="col">Invoice</th>
                   </tr>
               </thead>
               <tbody>
                   <tr>
-                      <th scope="row">Electrical engineering</th>
-                      <td>14th ICEENG 2024</td>
-                      <td>2024 14th International Conference on Electrical Engineering (ICEENG)</td>
+                      <th scope="row">2024 14th International Conference on Electrical Engineering (ICEENG)</th>
+                      <td>Lorem ipsum dolor sit amet</td>
+                      <td>Accepted</td>
+                      <td>Lorem ipsum dolor sit amet</td>
                       <td class="align-middle">
                           <ul class="nav justify-content-center">
                               <a class="icon-link" href="..."><i class=" align-middle bi bi-info-circle"></i></a>
                           </ul>
                       </td>
-                      <td><p>Cairo, Egypt</p><p>May 21, 2024</p></td>
-                      <td>Jan 16, 2024 18:59 Asia/Pontianak</td>
+                      <td>Have been pay</td>
                       <td class="align-middle">
                           <ul class="nav justify-content-center">
                               <a class="icon-link" href="{{url('submitregisterpaper')}}"><i class=" bi bi-plus-circle-fill"></i></a>
@@ -71,19 +71,19 @@
                       </td>
                   </tr>
                   <tr>
-                      <th scope="row">Communications</th>
-                      <td>2024 IEEE WF-PST</td>
-                      <td>2024 IEEE World Forum on Public Safety Technology (WF-PST)</td>
+                      <th scope="row">2024 IEEE World Forum on Public Safety Technology (WF-PST)</th>
+                      <td>Lorem ipsum dolor sit amet</td>
+                      <td>Accepted</td>
+                      <td>Lorem ipsum dolor sit amet</td>
                       <td class="align-middle">
                           <ul class="nav justify-content-center">
-                              <i class=" align-middle bi bi-info-circle"></i>
+                              <a class="icon-link" href="..."><i class=" align-middle bi bi-info-circle"></i></a>
                           </ul>
                       </td>
-                      <td><p>Washington, DC, USA</p><p>May 14, 2024</p></td>
-                      <td>Dec 19, 2023 11:59 Asia/Pontianakk</td>
+                      <td>Have been pay</td>
                       <td class="align-middle">
                           <ul class="nav justify-content-center">
-                              <i class=" bi bi-plus-circle-fill"></i>
+                              <a class="icon-link" href="{{url('submitregisterpaper')}}"><i class=" bi bi-plus-circle-fill"></i></a>
                           </ul>
                       </td>
                   </tr>
