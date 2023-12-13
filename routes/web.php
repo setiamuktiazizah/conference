@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GDriveController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +43,13 @@ Route::get('/login', function () {
     return view('user/login');
 });
 
+Route::post('/login', [LoginController::class, 'auth']);
+
 Route::get('/signup', function () {
     return view('user/signup');
 });
+
+Route::post('/signup', [RegisterController::class, 'register']);
 
 Route::get('/admin', function () {
     return view('admin');

@@ -23,10 +23,15 @@
             <button style="top: 160px; left: 900px; position: absolute; font-family: 'Roboto', sans serif; font-size: 10.7px; font-weight: bold; background-color: #B8DBE9; width: 140px; color: #293677"><i class="bi bi-facebook"></i> Log In with Facebook</button>
             <div style="top: 200px; left: 890px; position: absolute; font-family: 'Roboto', sans serif; font-size: 30px; font-weight: bold; color: #293677">Or</div>
             <div style="top: 250px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 24px; font-weight: bold; color: #293677; width: 00px">Email :</div>
-            <input type="email" style="top: 300px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 18px; font-weight: normal; color: #293677; width: 300px; background-color:#B8DBE9; border-style: solid; border-width: 2.5px; border-color: #293677">
-            <div style="top: 350px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 24px; font-weight: bold; color: #293677; width: 100px">Password :</div>
-            <input type="password" style="top: 400px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 18px; font-weight: normal; color: #293677; width: 300px; background-color:#B8DBE9; border-style: solid; border-width: 2.5px; border-color: #293677">
-            <button style="top: 450px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 24px; font-weight: bold; background-color: #293677; width: 300px; color: white"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+            
+            <form method="POST" action="/login">
+            @csrf
+                <input type="email" name = "email" id="email" style="top: 300px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 18px; font-weight: normal; color: #293677; width: 300px; background-color:#B8DBE9; border-style: solid; border-width: 2.5px; border-color: #293677">
+                <div style="top: 350px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 24px; font-weight: bold; color: #293677; width: 100px">Password :</div>
+                <input type="password" name = "password" id="password"  style="top: 400px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 18px; font-weight: normal; color: #293677; width: 300px; background-color:#B8DBE9; border-style: solid; border-width: 2.5px; border-color: #293677">
+                <button style="top: 450px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 24px; font-weight: bold; background-color: #293677; width: 300px; color: white" type="submit"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+           
+            </form>
         </div>
     </div>
 </body>
