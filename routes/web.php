@@ -40,6 +40,29 @@ Route::get('/login', function () {
     return view('user/login');
 });
 
+Route::get('/signup', function () {
+    return view('user/signup');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::get('/submitpaper', function () {
+    return view('submitpaper');
+});
+
+Route::get('/submitregisterpaper', function () {
+    return view('submitregisterpaper');
+});
+
+Route::get('/submitaddauthor', function () {
+    return view('submitaddauthor');
+});
+
+Route::get('/submituploadreviewmanuscript', function () {
+    return view('submituploadreviewmanuscript');
+});
 
 Route::get('upload', [GDriveController::class, 'upload']);
 Route::get('get-image', [GDriveController::class, 'getImage']);
