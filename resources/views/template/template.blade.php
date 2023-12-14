@@ -41,8 +41,8 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background-color: #293677">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between" style="background-color: #FD853A; border-radius: 25px">
 
       @include('template.navbar')
 

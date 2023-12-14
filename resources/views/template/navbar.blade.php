@@ -1,21 +1,23 @@
 <nav id="navbar" class="navbar">
-    <ul>
-        <a href="index.html" class="logo d-flex align-items-center">
+    {{-- <ul style="position: absolute; left: 200px"> --}}
+      <div class="container">
+
+        {{-- <a href="index.html" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1>Webdemia</h1>
           </a>
           <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/about">Submit Paper</a></li>
-      <li><a href="/paperinfo">Paper Info</a></li>
-      <li><a href="/schedule">Schedule</a></li>
-      <li><a href="/help">Help</a></li>
-      
-      </li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a class="get-a-quote" href="get-a-quote.html">Profile</a></li>
-    </ul>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i> --}}
+      <div class="row justify-content-center">
+      <div class="col-1"><a href="/">Home</a></div>
+      <div class="col-2"><a href="/about">Submit Paper</a></div>
+      <div class="col-2"><a href="/paperinfo">Paper Info</a></div>
+      <div class="col-2"><img src="{{asset('images\Webdemia Logo.png')}}" alt="Webdemia" style="width: 180px; height: 60px"></div>
+      <div class="col-2"><a href="/schedule">Schedule</a></div>
+      <div class="col-1"><a href="/help">Help</a></div>
+      <div class="col-1"><a href="/contact">Contact</a></div>
+      <div class="col-1"><a href="/login"><img src="{{asset('images\profile.png')}}" alt="Profile" style="width: 40px; height: 40px"></a></div>
+      </div>  
+    </div>
+    {{-- </ul> --}}
   </nav><!-- .navbar -->
