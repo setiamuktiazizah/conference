@@ -10,7 +10,7 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i> --}}
       <div class="row justify-content-center">
       <div class="col-1"><a href="/">Home</a></div>
-      <div class="col-2"><a href="/about">Submit Paper</a></div>
+      <div class="col-2"><a href="/submitpaper">Submit Paper</a></div>
       <div class="col-2"><a href="/paperinfo">Paper Info</a></div>
       <div class="col-2"><img src="{{asset('images\Webdemia Logo.png')}}" alt="Webdemia" style="width: 180px; height: 60px"></div>
       <div class="col-2"><a href="/schedule">Schedule</a></div>

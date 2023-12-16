@@ -1,12 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GDriveController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\SubmitPaperController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +20,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/submitpaper', [SubmitPaperController::class, 'index'])->name('submitpaper');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -55,9 +50,9 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get('/submitpaper', function () {
-    return view('submitpaper');
-});
+// Route::get('/submitpaper', function () {
+//     return view('submitpaper');
+// });
 
 Route::get('/submitregisterpaper', function () {
     return view('submitregisterpaper');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('conferences', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_reviewer');
+            $table->unsignedBigInteger('id_reviewer')->nullable();
             $table->string('name');
             $table->string('venue');
             $table->string('type');
