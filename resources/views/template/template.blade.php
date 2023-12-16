@@ -35,6 +35,8 @@
   {{-- DataTables --}}
   <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
   <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
   <!-- =======================================================
   * Template Name: Logis
