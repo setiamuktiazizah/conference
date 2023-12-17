@@ -1,7 +1,7 @@
 <nav class="mt-2" style="background-color: #FD853A">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href="/admin" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Dashboard
