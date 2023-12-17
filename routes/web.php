@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SubmitPaperController;
 use App\Http\Controllers\PaperInfoController;
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,17 +26,11 @@ Route::get('/submitpaper', [SubmitPaperController::class, 'index'])->name('submi
 
 Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo');
 
+Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
+
 
 Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/pricing', function () {
-    return view('pricing');
-});
-
-Route::get('/services', function () {
-    return view('services');
 });
 
 Route::get('/login', function () {
