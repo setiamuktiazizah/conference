@@ -5,12 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Logis Bootstrap Template - Index</title>
+  <title>Webdemia</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  {{-- CSS --}}
+  <link rel="stylesheet" href="{{asset('css/template-style.css')}} ">
+
   <!-- Favicons -->
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
+  {{-- <link href="{{asset('assets/img/favicon.png')}}" rel="icon"> --}}
+  <link href="{{asset('images\logo.png')}}" rel="icon">
   <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
