@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SubmitPaperController;
+use App\Http\Controllers\PaperInfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,9 @@ Route::get('/', function () {
 });
 
 Route::get('/submitpaper', [SubmitPaperController::class, 'index'])->name('submitpaper');
+
+Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo');
+
 
 Route::get('/contact', function () {
     return view('contact');
@@ -65,15 +69,3 @@ Route::get('/submitaddauthor', function () {
 Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');
 });
-
-Route::get('/paperinfo', function () {
-    return view('paperinfo');
-});
-
-// Route::get('upload', [GDriveController::class, 'upload']);
-// Route::get('get-image', [GDriveController::class, 'getImage']);
-
-
-
-// Route::resource('article', ArticleController::class);
-// Route::resource('sponsor', SponsorController::class);
