@@ -32,7 +32,6 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
-
 Route::get('/contact', function () {
     return view('contact');
 });
