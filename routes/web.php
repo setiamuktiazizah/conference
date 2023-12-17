@@ -28,6 +28,10 @@ Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
 
 Route::get('/contact', function () {
     return view('contact');
@@ -45,9 +49,6 @@ Route::get('/signup', function () {
 
 Route::post('/signup', [RegisterController::class, 'register']);
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 
 // Route::get('/submitpaper', function () {
 //     return view('submitpaper');
