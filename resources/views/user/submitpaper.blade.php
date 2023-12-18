@@ -21,15 +21,12 @@
     <div class="container-quotes">
       <table class="table table-bordered data-table">
           <thead>
-              {{-- <th>Area</th>
-              <th>Conference</th> --}}
-              <th>Name</th>
-              {{-- <th>Details</th> --}}
+              <th>Area</th>
+              <th>Conference</th>
               <th>Venue</th> 
-              {{-- <th>Where and When</th> --}}
-              {{-- <th>Deadline</th>
-              <th>Submit</th> --}}
-              {{-- <th>Aksi</th> --}}
+              <th>When</th>
+              <th>Deadline</th>
+              {{-- <th>Submit</th> --}}
           </thead>
       </table>
     </div>
@@ -40,14 +37,10 @@
           serverSide: true,
           ajax: "{{ route('submitpaper')}}",
           columns: [
-              // {data: 'id', name:'id'},
-              // {data: 'area', name:'area'},
-              {data: 'name', name: 'name'},
-              // {data: 'details', name:'details'},
+              {data: 'name', name:'name'},
               {data: 'venue', name: 'venue'},
-              // {data: 'deadline', name:'deadline'},
-              // {data: 'submit', name: 'submit'},
-              // {data: 'action', name:'action', orderable:false, searchable:false}
+              {data: 'start_date', name:'start_date'},
+              {data:'end_date', name: 'end_date'},
           ]
       });
     });
