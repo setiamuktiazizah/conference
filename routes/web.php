@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SubmitPaperController;
 use App\Http\Controllers\PaperInfoController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\Guestlistcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,8 @@ Route::get('/help', function () {
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });
+
+Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']);
 
 Route::get('/contact', function () {
     return view('contact');
