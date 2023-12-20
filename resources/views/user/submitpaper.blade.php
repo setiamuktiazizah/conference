@@ -19,39 +19,62 @@
       <p>Dates listed are deadlines for registering papers for the track or sub-conference. If tracks or subconferences have several different deadlines, the range is shown. All deadlines are Asia/Jakarta time unless otherwise noted. Deadlines in italics have expired.</p>
     </div> 
     <div class="container-quotes">
-      <table class="table table-bordered data-table">
-          <thead>
-              {{-- <th>Area</th>
-              <th>Conference</th> --}}
+
+      <table id="data-table" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+              <th>Area</th>
               <th>Name</th>
-              {{-- <th>Details</th> --}}
-              <th>Venue</th> 
-              {{-- <th>Where and When</th> --}}
-              {{-- <th>Deadline</th>
-              <th>Submit</th> --}}
-              {{-- <th>Aksi</th> --}}
-          </thead>
-      </table>
+              <th>Where and When</th> 
+              <th>Deadline</th>
+              <th>Aksi</th>
+
+            </tr>
+        </thead>
+        <tbody>
+          @foreach($conferences as $conference)
+
+          <tr>
+            <td>{{ $conference->topic }}</td>
+            <td>{{ $conference->name }}</td>
+            <td>{{ $conference->venue }} </br> {{ $conference->start_date }} </td> 
+            <td>{{ $conference->end_date }}</td>
+            <td>
+              <a href="{{ route('submit.register.paper') }}"><button type="button" class="btn btn-primary">+</button></a>
+            </td>
+          </tr>
+          @endforeach
+
+        </tbody>
+    </table>
     </div>
-    <script type="text/javascript">
-    $(function() {
-      var table = $('.data-table').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('submitpaper')}}",
-          columns: [
-              // {data: 'id', name:'id'},
-              // {data: 'area', name:'area'},
-              {data: 'name', name: 'name'},
-              // {data: 'details', name:'details'},
-              {data: 'venue', name: 'venue'},
-              // {data: 'deadline', name:'deadline'},
-              // {data: 'submit', name: 'submit'},
-              // {data: 'action', name:'action', orderable:false, searchable:false}
-          ]
-      });
-    });
-    </script>
+
   </main>
 </section>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+  $(function() {
+    $('#data-table').DataTable({
+        // processing: true,
+        // serverSide: true,
+        // ajax: "{{ route('get.conference') }}",
+        // columns: [
+        //     // {data: 'id', name:'id'},
+        //     {data: 'topic', name:'topic'},
+        //     {data: 'name', name: 'name'},
+        //     {
+        //       render: function(data, type, row) {
+        //                     return row.venue+"</br>"+row.start_date;
+        //       },
+        //     },
+        //     // {data: 'start_date', name:'start_date'},
+        //     {data: 'end_date', name:'end_date'},
+        //     // {data: 'submit', name: 'submit'},
+        //     // {data: 'action', name:'action', orderable:false, searchable:false}
+        // ]
+    });
+  });
+  </script>
 @endsection
