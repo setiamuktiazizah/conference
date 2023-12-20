@@ -19,27 +19,37 @@
         <table class="table table-bordered data-table">
           <thead>
             <th>Conference</th>
-            {{-- <th>Paper Title</th>
+            <th>Paper Title</th>
             <th>Status</th>
             <th>Revision</th>
             <th>Add and Delete Author</th>
             <th>Payment Status</th>
-            <th>Invoice</th> --}}
+            <th>Invoice</th>
           </thead>
+          <tbody>
+            @foreach ($articles as $article)     
+              <tr>
+                <td>{{$article->conference->name}}</td>
+                <td>{{$article->title}}</td> 
+                <td>{{ ucfirst($article->status)}}</td>
+                <td class="text-center align-middle"><button class="btn btn-success">
+                  <i class="fas fa-info-circle"></i>
+                </button></td>
+                <td class="text-center align-middle"><button class="btn btn-primary">
+                  <i class="fas fa-plus"> </i></button> <button class="btn btn-danger"><i class="fas fa-minus"></i></button>
+                </td>
+                <td class="text-center"> - </td>
+                <td class="text-center"> - </td>
+              </tr>
+            @endforeach
+          </tbody>
       </table>
     </div>
     <script type="text/javascript">
-    $(function() {
-      var table = $('.data-table').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('paperinfo')}}",
-          columns: [
-              {data: 'name', name: 'name'},
-          ]
+      $(function() {
+        var table = $('#data-table').DataTable();
       });
-    });
-    </script>
+      </script>
   </main>
 </section>
 @endsection

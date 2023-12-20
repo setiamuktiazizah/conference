@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 use App\Models\AuthorConferenceFile;
 use App\Models\ReviewArticle;
@@ -24,7 +25,6 @@ class Article extends Model
 
     protected $guarded = ['id'];
 
-
     public function AuthorConferenceFile(): HasOne
     {
         return $this->hasOne(AuthorConferenceFile::class);
@@ -40,9 +40,9 @@ class Article extends Model
         return $this->belongsToMany(Topic::class);
     }
 
-    public function Conference(): BelongsToMany
+    public function Conference(): BelongsTo
     {
-        return $this->belongsToMany(Conference::class);
+        return $this->belongsTo(Conference::class);
     }
 
     public function User(): BelongsToMany

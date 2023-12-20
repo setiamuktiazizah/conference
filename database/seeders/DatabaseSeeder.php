@@ -4,12 +4,18 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+
+use App\Models\Article;
 use App\Models\Reviewer;
 use App\Models\User;
 use App\Models\Conference;
 use App\Models\MasterActivity;
 use App\Models\Topic;
+use App\Models\ReviewArticle;
 use App\Models\Schedule;
+use App\Models\Price;
+use App\Models\Payment;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,5 +36,9 @@ class DatabaseSeeder extends Seeder
         Schedule::factory()->count(10)->create();
         Conference::factory()->count(10)->create();
         Reviewer::factory()->count(10)->create();
+        Article::factory()->count(10)->create();
+        ReviewArticle::factory()->count(10)->create();
+        Price::factory()->count(10)->create();
+        Payment::factory()->count(10)->create();
     }
 }

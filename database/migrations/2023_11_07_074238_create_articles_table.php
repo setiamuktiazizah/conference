@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('topic_id');
-            $table->unsignedBigInteger('review_article_id');
-            $table->unsignedBigInteger('auth_conf_file');
+            $table->unsignedBigInteger('conference_id');
+            $table->unsignedBigInteger('review_article_id')->nullable();
+            $table->unsignedBigInteger('auth_conf_file')->nullable();
             $table->string('title');
             $table->text('abstract');
             $table->string('status');

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use App\Models\Conference;
 use App\Models\Payment;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Price extends Model
 {
@@ -20,8 +21,8 @@ class Price extends Model
         return $this->hasOne(Conference::class);
     }
 
-    public function Payment(): BelongsTo
+    public function Payment(): HasMany
     {
-        return $this->belongsTo(Payment::class);
+        return $this->hasMany(Payment::class);
     }
 }

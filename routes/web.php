@@ -23,7 +23,6 @@ Route::get('/', function () {
 });
 
 Route::get('/submitpaper', [SubmitPaperController::class, 'index'])->name('submitpaper');
-Route::get('/get_conference', [SubmitPaperController::class, 'get_conference'])->name('get.conference');
 
 Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo');
 
