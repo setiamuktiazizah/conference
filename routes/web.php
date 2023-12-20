@@ -37,6 +37,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/help', function () {
+    return view('help');
+});
+
 Route::get('/login', function () {
     return view('user/login');
 });
