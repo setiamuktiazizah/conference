@@ -39,6 +39,10 @@ Route::get('/admin', function () {
 
 Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']);
 
+Route::get('/articlelist', function () {
+    return view('reviewer.articlelist');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
