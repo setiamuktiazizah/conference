@@ -49,9 +49,9 @@ Route::get('/signup', function () {
 Route::post('/signup', [RegisterController::class, 'register']);
 
 
-// Route::get('/submitpaper', function () {
-//     return view('submitpaper');
-// });
+Route::get('/submitpaper', function () {
+    return view('submitpaper');
+});
 
 Route::get('/submitregisterpaper', function () {
     return view('submitregisterpaper');
@@ -63,4 +63,8 @@ Route::get('/submitaddauthor', function () {
 
 Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');
+});
+
+Route::get('/konfigurasipembayaran', function () {
+    return view('bendahara.konfigurasi');
 });
