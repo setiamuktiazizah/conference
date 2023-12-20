@@ -69,3 +69,7 @@ Route::get('/submituploadreviewmanuscript', function () {
 Route::get('/konfigurasipembayaran', function () {
     return view('bendahara.konfigurasi');
 });
+
+Route::get('/paymentstatus', function () {
+    return view('bendahara.paymentstatus');
+});
