@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Conference;
-use App\Models\RegisterConference;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -20,9 +19,7 @@ class SubmitPaperController extends Controller
         
         // dd($data);
         if ($request->ajax()) {
-            $data = $this->conference->getConference();
-
-            // $data = Conference::select('');
+            $data = Conference::select('*');
             return DataTables::of($data)
                 ->addIndexColumn()
                 // ->addColumn('action', function ($row) {
@@ -30,6 +27,15 @@ class SubmitPaperController extends Controller
                 //     return $actionBtn;
                 // })
                 // ->rawColumn(['action'])
+                ->addIndexColumn()
+                ->addColumn('topic_names', function ($conference) {
+                    return $conference->topics->pluck('name')->implode(', ');
+                })
+                ->addColumn('start_date', function ($conference) {
+                    // Ambil data dari relasi schedules
+                    return $conference->schedules->pluck('start_date')->implode(', ');
+                })
+                // Tambahkan kolom lain sesuai kebutuhan
                 ->make(true);
             }
 

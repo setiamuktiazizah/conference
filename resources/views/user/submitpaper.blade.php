@@ -19,6 +19,7 @@
       <p>Dates listed are deadlines for registering papers for the track or sub-conference. If tracks or subconferences have several different deadlines, the range is shown. All deadlines are Asia/Jakarta time unless otherwise noted. Deadlines in italics have expired.</p>
     </div> 
     <div class="container-quotes">
+<<<<<<< HEAD
 
       <table id="data-table" class="table table-bordered table-hover">
         <thead>
@@ -49,6 +50,34 @@
     </table>
     </div>
 
+=======
+      <table class="table table-bordered data-table">
+          <thead>
+              <th>Area</th>
+              <th>Conference</th>
+              <th>Venue</th> 
+              <th>When</th>
+              <th>Deadline</th>
+              {{-- <th>Submit</th> --}}
+          </thead>
+      </table>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+      var table = $('.data-table').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: "{{ route('submitpaper')}}",
+          columns: [
+              {data: 'name', name:'name'},
+              {data: 'venue', name: 'venue'},
+              {data: 'start_date', name:'start_date'},
+              {data:'end_date', name: 'end_date'},
+          ]
+      });
+    });
+    </script>
+>>>>>>> 734502cba371b9653ffaa8960260d8c4838b8075
   </main>
 </section>
 @endsection

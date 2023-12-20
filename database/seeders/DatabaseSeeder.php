@@ -7,6 +7,9 @@ use Illuminate\Database\Seeder;
 use App\Models\Reviewer;
 use App\Models\User;
 use App\Models\Conference;
+use App\Models\MasterActivity;
+use App\Models\Topic;
+use App\Models\Schedule;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +27,8 @@ class DatabaseSeeder extends Seeder
         User::factory()->count(10)->create();
         Conference::factory()->count(10)->create();
         Reviewer::factory()->count(10)->create();
+        MasterActivity::factory()->count(10)->create();
+        Topic::factory()->count(10)->create();
+        Schedule::factory()->count(10)->create();
     }
 }
