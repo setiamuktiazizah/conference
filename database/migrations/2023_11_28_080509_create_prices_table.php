@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_conference');
+            $table->unsignedBigInteger('conference_id');
             $table->string('name');
             $table->float('price_idr');
             $table->float('price_usd');

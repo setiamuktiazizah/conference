@@ -5,6 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Conference;
+use App\Models\Article;
+use App\Models\Form;
+use App\Models\User;
+
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class Review extends Model
 {
     use HasFactory;

@@ -5,6 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+use App\Models\AuthorConferenceFile;
+use App\Models\ReviewArticle;
+use App\Models\Topic;
+use App\Models\Conference;
+use App\Models\User;
+use App\Models\ArticleHistory;
+use App\Models\Author;
+use App\Models\Review;
+
 class Article extends Model
 {
     use HasFactory;
@@ -21,10 +34,10 @@ class Article extends Model
     {
         return $this->hasMany(ReviewArticle::class);
     }
-    
-    public function Topic(): HasMany
+
+    public function Topic(): BelongsToMany
     {
-        return $this->hasMany(Topic::class);
+        return $this->belongsToMany(Topic::class);
     }
 
     public function Conference(): BelongsToMany
@@ -35,5 +48,20 @@ class Article extends Model
     public function User(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function ArticleHistory(): HasMany
+    {
+        return $this->hasMany(ArticleHistory::class);
+    }
+
+    public function Author(): HasMany
+    {
+        return $this->hasMany(Author::class);
+    }
+
+    public function Review(): BelongsToMany
+    {
+        return $this->belongsToMany(Review::class);
     }
 }

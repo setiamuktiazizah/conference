@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_article');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('article_id');
+            $table->unsignedBigInteger('user_id');
             $table->boolean('is_corr_auth');
             $table->unsignedBigInteger('auth_no');
             $table->unsignedBigInteger('created_by');

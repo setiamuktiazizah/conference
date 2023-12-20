@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_topic');
-            $table->unsignedBigInteger('id_review_article');
-            $table->unsignedBigInteger('id_auth_conf_file');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('topic_id');
+            $table->unsignedBigInteger('review_article_id');
+            $table->unsignedBigInteger('auth_conf_file');
             $table->string('title');
             $table->text('abstract');
             $table->string('status');

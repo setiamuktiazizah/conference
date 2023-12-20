@@ -13,10 +13,10 @@ return new class extends Migration
     {
         //
         Schema::table('articles', function (Blueprint $table) {
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_topic')->references('id')->on('topics');
-            $table->foreign('id_review_article')->references('id')->on('articles');
-            $table->foreign('id_auth_conf_file')->references('id')->on('author_conference_files');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('topic_id')->references('id')->on('topics');
+            $table->foreign('review_article_id')->references('id')->on('articles');
+            $table->foreign('auth_conf_file')->references('id')->on('author_conference_files');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
         });
@@ -29,10 +29,10 @@ return new class extends Migration
     {
         //
         Schema::table('articles', function (Blueprint $table) {
-            $table->dropForeign(['id_user']);
-            $table->dropForeign(['id_topic']);
-            $table->dropForeign(['id_review_article']);
-            $table->dropForeign(['id_auth_conf_file']);
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['topic_id']);
+            $table->dropForeign(['review_article_id']);
+            $table->dropForeign(['auth_conf_file']);
             $table->dropForeign(['created_by']);
             $table->dropForeign(['updated_by']);
         });

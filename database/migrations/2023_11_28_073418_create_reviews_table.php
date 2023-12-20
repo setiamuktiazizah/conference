@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_conference');
-            $table->unsignedBigInteger('id_article');
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('id_form');
+            $table->unsignedBigInteger('conference_id');
+            $table->unsignedBigInteger('article_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('form_id');
             $table->string('revision_path');
             $table->float('score');
             $table->unsignedBigInteger('created_by');

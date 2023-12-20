@@ -13,8 +13,8 @@ return new class extends Migration
     {
         //
         Schema::table('payments', function (Blueprint $table) {
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_price')->references('id')->on('prices');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('price_id')->references('id')->on('prices');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
         });
@@ -27,8 +27,8 @@ return new class extends Migration
     {
         //
         Schema::table('prices', function (Blueprint $table) {
-            $table->dropForeign(['id_user']);
-            $table->dropForeign(['id_price']);
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['price_id']);
             $table->dropForeign(['created_by']);
             $table->dropForeign(['updated_by']);
         });

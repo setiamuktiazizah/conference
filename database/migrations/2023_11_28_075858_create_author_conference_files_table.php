@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('author_conference_files', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_article');
-            $table->unsignedBigInteger('id_filetype');
+            $table->unsignedBigInteger('article_id');
+            $table->unsignedBigInteger('filetype_id');
             $table->string('pathfile');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();

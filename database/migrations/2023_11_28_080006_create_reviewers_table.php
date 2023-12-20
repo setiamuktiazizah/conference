@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('reviewers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_conference');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('conference_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();

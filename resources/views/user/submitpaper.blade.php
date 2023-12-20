@@ -21,35 +21,32 @@
     <div class="container-quotes">
       <table class="table table-bordered data-table">
           <thead>
-              {{-- <th>Area</th>
-              <th>Conference</th> --}}
-              <th>Name</th>
-              {{-- <th>Details</th> --}}
-              <th>Venue</th> 
-              {{-- <th>Where and When</th> --}}
-              {{-- <th>Deadline</th>
-              <th>Submit</th> --}}
-              {{-- <th>Aksi</th> --}}
+              <th>Area</th>
+              <th>Conference</th>
+              <th>Venue</th>
+              <th>When</th>
+              <th>Deadline</th>
+              <th>Submit</th>
           </thead>
+          <tbody>
+            @foreach ($conferences as $conference)     
+              <tr>
+                <td>{{$conference->Topic->name}}</td> 
+                <td>{{$conference->name}}</td>
+                <td>{{$conference->venue}}</td>
+                <td>{{$conference->Schedule->start_date}}</td>
+                <td>{{$conference->Schedule->end_date}} </td>
+                <td class="text-center align-middle"><button class="btn btn-primary">
+                  <i class="fas fa-plus"></i>
+                </button></td>
+              </tr>
+            @endforeach
+          </tbody>
       </table>
     </div>
     <script type="text/javascript">
     $(function() {
-      var table = $('.data-table').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('submitpaper')}}",
-          columns: [
-              // {data: 'id', name:'id'},
-              // {data: 'area', name:'area'},
-              {data: 'name', name: 'name'},
-              // {data: 'details', name:'details'},
-              {data: 'venue', name: 'venue'},
-              // {data: 'deadline', name:'deadline'},
-              // {data: 'submit', name: 'submit'},
-              // {data: 'action', name:'action', orderable:false, searchable:false}
-          ]
-      });
+      var table = $('#data-table').DataTable();
     });
     </script>
   </main>

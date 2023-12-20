@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //
         Schema::table('article_histories', function (Blueprint $table) {
-            $table->foreign('id_article')->references('id')->on('articles');
+            $table->foreign('article_id')->references('id')->on('articles');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
         });
@@ -26,7 +26,7 @@ return new class extends Migration
     {
         //
         Schema::table('article_histories', function (Blueprint $table) {
-            $table->dropForeign(['id_article']);
+            $table->dropForeign(['article_id']);
             $table->dropForeign(['created_by']);
             $table->dropForeign(['updated_by']);
         });

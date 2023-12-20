@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('article_histories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_article');
+            $table->unsignedBigInteger('article_id');
             $table->string('filepath_old');
             $table->string('filepath_new');
             $table->string('filepath_turnitin');

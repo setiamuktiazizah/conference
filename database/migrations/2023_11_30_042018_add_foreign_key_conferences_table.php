@@ -13,7 +13,9 @@ return new class extends Migration
     {
         //
         Schema::table('conferences', function (Blueprint $table) {
-            $table->foreign('id_reviewer')->references('id')->on('reviewers');
+            $table->foreign('reviewer_id')->references('id')->on('reviewers');
+            $table->foreign('topic_id')->references('id')->on('topics');
+            $table->foreign('schedule_id')->references('id')->on('schedules');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
         });
@@ -26,7 +28,9 @@ return new class extends Migration
     {
         //
         Schema::table('conferences', function (Blueprint $table) {
-            $table->dropForeign(['id_reviewer']);
+            $table->dropForeign(['reviewer_id']);
+            $table->dropForeign(['topic_id']);
+            $table->dropForeign(['schedule_id']);
             $table->dropForeign(['created_by']);
             $table->dropForeign(['updated_by']);
         });
