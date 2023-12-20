@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         User::factory()->count(10)->create();
+        Topic::factory()->count(10)->create();
+        MasterActivity::factory()->count(10)->create();
+        Schedule::factory()->count(10)->create();
         Conference::factory()->count(10)->create();
         Reviewer::factory()->count(10)->create();
-        MasterActivity::factory()->count(10)->create();
-        Topic::factory()->count(10)->create();
-        Schedule::factory()->count(10)->create();
     }
 }

@@ -21,8 +21,7 @@ class ScheduleFactory extends Factory
     {
         return [
             //
-            'id_conference' => $this->faker->numberBetween(2, 10),
-            'id_master_activity' => $this->faker->numberBetween(2, 10),
+            'master_activity_id' => $this->faker->numberBetween(2, 10),
             'start_date' => Carbon::now()->timezone($this->faker->timezone)->toDateTimeString(),
             'end_date' => Carbon::now()->timezone($this->faker->timezone)->toDateTimeString(),
             'created_by' => 1, // Sesuaikan dengan kebutuhan

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sponsors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_conference');
+            $table->unsignedBigInteger('conference_id');
             $table->string('name');
             $table->string('logo');
             $table->unsignedBigInteger('created_by');

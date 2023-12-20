@@ -16,6 +16,7 @@
   {{-- <link href="{{asset('assets/img/favicon.png')}}" rel="icon"> --}}
   <link href="{{asset('images\logo.png')}}" rel="icon">
   <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,10 +38,8 @@
   <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
 
   {{-- DataTables --}}
-  <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-  <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
   <!-- =======================================================
   * Template Name: Logis

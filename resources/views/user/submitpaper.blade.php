@@ -19,30 +19,34 @@
       <p>Dates listed are deadlines for registering papers for the track or sub-conference. If tracks or subconferences have several different deadlines, the range is shown. All deadlines are Asia/Jakarta time unless otherwise noted. Deadlines in italics have expired.</p>
     </div> 
     <div class="container-quotes">
-      <table class="table table-bordered data-table">
+      <table class="table table-bordered data-table" id="data-table">
           <thead>
               <th>Area</th>
               <th>Conference</th>
-              <th>Venue</th> 
+              <th>Venue</th>
               <th>When</th>
               <th>Deadline</th>
-              {{-- <th>Submit</th> --}}
+              <th>Submit</th>
           </thead>
+          <tbody>
+            @foreach ($conferences as $conference)     
+              <tr>
+                <td>{{$conference->Topic->name}}</td> 
+                <td>{{$conference->name}}</td>
+                <td>{{$conference->venue}}</td>
+                <td>{{$conference->Schedule->start_date}}</td>
+                <td>{{$conference->Schedule->end_date}} </td>
+                <td class="text-center align-middle"><button class="btn btn-primary">
+                  <i class="fas fa-plus"></i>
+                </button></td>
+              </tr>
+            @endforeach
+          </tbody>
       </table>
     </div>
     <script type="text/javascript">
     $(function() {
-      var table = $('.data-table').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('submitpaper')}}",
-          columns: [
-              {data: 'name', name:'name'},
-              {data: 'venue', name: 'venue'},
-              {data: 'start_date', name:'start_date'},
-              {data:'end_date', name: 'end_date'},
-          ]
-      });
+      var table = $('#data-table').DataTable();
     });
     </script>
   </main>

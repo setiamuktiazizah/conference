@@ -24,7 +24,6 @@ class TopicFactory extends Factory
         return [
             //
             'name' => $this->faker->sentence(2),
-            'id_conference' => $this->faker->numberBetween(2, 10),
             'created_by' => 1, // Sesuaikan dengan kebutuhan
             'updated_by' => null, // Sesuaikan dengan kebutuhan
             'created_at' => Carbon::now(),

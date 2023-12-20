@@ -21,8 +21,8 @@ class ReviewerFactory extends Factory
     public function definition()
     {
         return [
-            'id_conference' => $this->faker->numberBetween(2, 10),
-            'id_user' => $this->faker->numberBetween(1, 10),
+            'conference_id' => $this->faker->numberBetween(2, 10),
+            'user_id' => $this->faker->numberBetween(1, 10),
             'created_by' => 1,
             'updated_by' => 1,
             'created_at' => Carbon::now(),

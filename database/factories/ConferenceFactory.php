@@ -21,8 +21,10 @@ class ConferenceFactory extends Factory
     public function definition()
     {
         return [
-            'id_reviewer' => null,
+            'reviewer_id' => null,
             'name' => $this->faker->sentence(4),
+            'topic_id' => $this->faker->numberBetween(2, 10),
+            'schedule_id' => $this->faker->numberBetween(2, 10),
             'venue' => $this->faker->company,
             'type' => $this->faker->randomElement(['Tech', 'Science', 'Business']),
             'total_reviewer' => $this->faker->numberBetween(50, 200),
