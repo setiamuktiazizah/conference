@@ -66,7 +66,7 @@
                       <td>Have been pay</td>
                       <td class="align-middle">
                           <ul class="nav justify-content-center">
-                              <a class="icon-link" href="{{url('submitregisterpaper')}}"><i class=" bi bi-plus-circle-fill"></i></a>
+                            <i class="bi bi-receipt"></i>
                           </ul>
                       </td>
                   </tr>

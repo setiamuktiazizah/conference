@@ -62,6 +62,10 @@ Route::get('/submitregisterpaper', function () {
     return view('submitregisterpaper');
 })->name('submit.register.paper');
 
+Route::get('/paperinfo', function () {
+    return view('paperinfo');
+});
+
 Route::get('/submitaddauthor', function () {
     return view('submitaddauthor');
 });
