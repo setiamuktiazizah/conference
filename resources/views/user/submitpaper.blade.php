@@ -19,7 +19,7 @@
       <p>Dates listed are deadlines for registering papers for the track or sub-conference. If tracks or subconferences have several different deadlines, the range is shown. All deadlines are Asia/Jakarta time unless otherwise noted. Deadlines in italics have expired.</p>
     </div> 
     <div class="container-quotes">
-      <table class="table table-bordered data-table" id="data-table">
+      <table class="table table-bordered data-table">
           <thead>
               <th>Area</th>
               <th>Conference</th>
