@@ -1,5 +1,5 @@
 <nav id="navbar" class="navbar">
-      <div class="container">
+    <div class="container">
       <div class="row justify-content-center">
       <div class="col-1"><a href="/" class="{{ Request::path() === '/' ? 'active' : '' }}">Home</a></div>
       <div class="col-2"><a href="/submitpaper" class="{{ Request::path() === 'submitpaper' ? 'active' : '' }}">Submit Paper</a></div>

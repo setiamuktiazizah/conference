@@ -60,7 +60,7 @@
               </div>
               <div class="col">
                 <div>
-                  <button type="submit" class="btn btn-primary">Done</button>
+                  <a href="{{url('paperinfo')}}"><button type="button" class="btn btn-primary">Done</button></a>
                 </div>
               </div>
           </div>
