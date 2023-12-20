@@ -28,16 +28,16 @@ Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
+Route::get('/help', function () {
+    return view('user.help');
+});
+
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
 Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/help', function () {
-    return view('help');
 });
 
 Route::get('/login', function () {
@@ -53,17 +53,17 @@ Route::get('/signup', function () {
 Route::post('/signup', [RegisterController::class, 'register']);
 
 
-Route::get('/submitpaper', function () {
-    return view('submitpaper');
-});
+// Route::get('/submitpaper', function () {
+//     return view('submitpaper');
+// });
 
 Route::get('/submitregisterpaper', function () {
     return view('submitregisterpaper');
 })->name('submit.register.paper');
 
-Route::get('/paperinfo', function () {
-    return view('paperinfo');
-});
+// Route::get('/paperinfo', function () {
+//     return view('paperinfo');
+// });
 
 Route::get('/submitaddauthor', function () {
     return view('submitaddauthor');

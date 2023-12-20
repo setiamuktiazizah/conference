@@ -30,3 +30,17 @@
     margin-left: 100px;
     margin-right: 100px;
   }
+
+.faq-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding-left: 20px;
+}
