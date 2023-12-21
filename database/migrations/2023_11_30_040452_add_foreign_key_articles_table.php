@@ -14,6 +14,7 @@ return new class extends Migration
         //
         Schema::table('articles', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('conference_id')->references('id')->on('conferences');
             $table->foreign('topic_id')->references('id')->on('topics');
             $table->foreign('review_article_id')->references('id')->on('articles');
             $table->foreign('auth_conf_file')->references('id')->on('author_conference_files');
@@ -30,6 +31,7 @@ return new class extends Migration
         //
         Schema::table('articles', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
+            $table->dropForeign(['conference_id']);
             $table->dropForeign(['topic_id']);
             $table->dropForeign(['review_article_id']);
             $table->dropForeign(['auth_conf_file']);

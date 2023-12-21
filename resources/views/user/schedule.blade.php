@@ -19,25 +19,34 @@
         <table class="table table-bordered data-table">
           <thead>
             <th>Conference</th>
-            {{-- <th>Name</th>
             <th>Home Page</th>
-            <th>Place and Date</th>
-            <th>Register</th> --}}
+            <th>Place</th>
+            <th>Schedule</th>
+            <th>Register</th>
           </thead>
+          <tbody>
+            @foreach ($conferences as $conference)     
+              <tr>
+                <td>{{$conference->name}}</td>
+                <td class="text-center align-middle"><a href={{$conference->url}} ><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                <td>{{$conference->venue}}</td>
+                <td>{{$conference->Schedule->start_date .' - '. $conference->Schedule->end_date}} </td>
+                {{-- <td class="text-center align-middle"><button class="btn btn-success">
+                  <i class="fas fa-arrow-up-right-square"></i>
+                </button></td> --}}
+                <td class="text-center align-middle"><button class="btn btn-success">
+                  <i class="fas fa-user-plus"></i>
+                </button></td>
+              </tr>
+            @endforeach
+          </tbody>
       </table>
     </div>
     <script type="text/javascript">
-    $(function() {
-      var table = $('.data-table').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('schedule')}}",
-          columns: [
-              {data: 'name', name: 'name'},
-          ]
+      $(function() {
+        var table = $('#data-table').DataTable();
       });
-    });
-    </script>
+      </script>
   </main>
 </section>
 @endsection

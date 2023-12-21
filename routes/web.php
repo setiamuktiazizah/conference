@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SubmitPaperController;
 use App\Http\Controllers\PaperInfoController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\Guestlistcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,22 +24,27 @@ Route::get('/', function () {
 });
 
 Route::get('/submitpaper', [SubmitPaperController::class, 'index'])->name('submitpaper');
-Route::get('/get_conference', [SubmitPaperController::class, 'get_conference'])->name('get.conference');
 
 Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo');
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
+Route::get('/help', function () {
+    return view('user.help');
+});
+
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']);
+
+Route::get('/articlelist', function () {
+    return view('reviewer.articlelist');
 });
 
-Route::get('/help', function () {
-    return view('help');
+Route::get('/contact', function () {
+    return view('contact');
 });
 
 Route::get('/login', function () {
@@ -54,17 +60,17 @@ Route::get('/signup', function () {
 Route::post('/signup', [RegisterController::class, 'register']);
 
 
-Route::get('/submitpaper', function () {
-    return view('submitpaper');
-});
+// Route::get('/submitpaper', function () {
+//     return view('submitpaper');
+// });
 
 Route::get('/submitregisterpaper', function () {
     return view('submitregisterpaper');
 })->name('submit.register.paper');
 
-Route::get('/paperinfo', function () {
-    return view('paperinfo');
-});
+// Route::get('/paperinfo', function () {
+//     return view('paperinfo');
+// });
 
 Route::get('/submitaddauthor', function () {
     return view('submitaddauthor');

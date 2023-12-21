@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Price;
 use App\Models\User;
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -15,9 +15,9 @@ class Payment extends Model
 {
     use HasFactory;
 
-    public function Price(): HasOne
+    public function Price(): BelongsTo
     {
-        return $this->hasOne(Price::class);
+        return $this->belongsTo(Price::class);
     }
 
     public function User(): BelongsToMany

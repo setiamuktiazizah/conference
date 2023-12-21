@@ -37,11 +37,4 @@ class ConferenceFactory extends Factory
             'updated_at' => Carbon::now(),
         ];
     }
-    // public function definition(): array
-    // {
-    //     return [
-    //         //
-
-    //     ];
-    // }
 }

@@ -11,17 +11,7 @@ class ScheduleController extends Controller
     //
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $data = Conference::select('*');
-            return DataTables::of($data)
-                ->addIndexColumn()
-                // ->addColumn('action', function ($row) {
-                //     $actionBtn = '';
-                //     return $actionBtn;
-                // })
-                // ->rawColumn(['action'])
-                ->make(true);
-        }
-        return view('user.schedule');
+        $conferences = Conference::with('Schedule')->get();
+        return view('user.schedule', ['conferences' => $conferences]);
     }
 }
