@@ -104,6 +104,10 @@ Route::get('/submitaddauthor', function () {
     return view('submitaddauthor');
 });
 
+Route::get('/listofconference', function () {
+    return view('admin.listofconference');
+});
+
 Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');
 });
