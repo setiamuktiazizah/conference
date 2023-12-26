@@ -44,3 +44,13 @@
     display: none;
     padding-left: 20px;
 }
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.top-right {
+    margin-left: 900px;
+}
