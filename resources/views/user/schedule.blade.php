@@ -18,18 +18,22 @@
       <h3>Conferences open for registration</h3>
         <table class="table table-bordered data-table">
           <thead>
-            <th>Conference</th>
-            <th>Home Page</th>
-            <th>Place</th>
-            <th>Schedule</th>
-            <th>Register</th>
+            <th style="text-align: center">Conference</th>
+            <th style="text-align: center">Home Page</th>
+            <th style="text-align: center">Place</th>
+            <th style="text-align: center">Schedule</th>
+            <th style="text-align: center">Register</th>
           </thead>
           <tbody>
             @foreach ($conferences as $conference)     
               <tr>
                 <td>{{$conference->name}}</td>
                 <td class="text-center align-middle"><a href={{$conference->url}} ><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
-                <td>{{$conference->venue}}</td>
+                <td style="position: relative;">{{$conference->venue}} 
+                  <a href={{$conference->url_venue}} style="position: absolute;transform: translate(50%, 50%); top:5px; right: 10px;">
+                      <i class="fa-solid fa-location-dot"></i>
+                  </a>
+              </td>
                 <td>{{$conference->Schedule->start_date .' - '. $conference->Schedule->end_date}} </td>
                 {{-- <td class="text-center align-middle"><button class="btn btn-success">
                   <i class="fas fa-arrow-up-right-square"></i>

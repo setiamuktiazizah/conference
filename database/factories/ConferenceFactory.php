@@ -26,6 +26,7 @@ class ConferenceFactory extends Factory
             'topic_id' => $this->faker->numberBetween(2, 10),
             'schedule_id' => $this->faker->numberBetween(2, 10),
             'venue' => $this->faker->company,
+            'url_venue' => $this->faker->url,
             'type' => $this->faker->randomElement(['Tech', 'Science', 'Business']),
             'total_reviewer' => $this->faker->numberBetween(50, 200),
             'logo' => $this->faker->imageUrl(), // Contoh penggunaan URL gambar (bisa disesuaikan)
