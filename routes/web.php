@@ -30,16 +30,24 @@ Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
+Route::get('/bundling', function () {
+    return view('bundling');
+});
+
+Route::get('/accpartner', function () {
+    return view('admin.accpartner');
+});
+
 Route::get('/help', function () {
     return view('user.help');
 });
 
-Route::get('/registerconference', function () {
-    return view('registerconference');
+Route::get('/registerpartner', function () {
+    return view('registerpartner');
 });
 
-Route::get('/submitpaperdetail', function () {
-    return view('user.submitpaper-detail');
+Route::get('/conferencedetail', function () {
+    return view('user.conferencedetail');
 });
 
 Route::get('/user-profile', function () {
