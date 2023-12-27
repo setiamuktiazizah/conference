@@ -7,6 +7,8 @@ use App\Http\Controllers\PaperInfoController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\Guestlistcontroller;
 use App\Http\Controllers\ListOfConferenceController;
+use App\Http\Controllers\ListofPartnerController;
+use App\Http\Controllers\ArticleforReviewerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,9 +36,9 @@ Route::get('/bundling', function () {
     return view('bundling');
 });
 
-Route::get('/accpartner', function () {
-    return view('admin.accpartner');
-});
+
+Route::get('/accpartner', [ListofPartnerController::class, 'GetAllPartner']);
+
 
 Route::get('/help', function () {
     return view('user.help');
@@ -83,6 +85,9 @@ Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']);
 Route::get('/articlelist', function () {
     return view('reviewer.articlelist');
 });
+
+Route::get('/articlereviewer/{user}', [ArticleforReviewerController::class, 'GetAllArtcileforReviewer']);
+
 
 Route::get('/contact', function () {
     return view('contact');

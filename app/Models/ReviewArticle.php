@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-use App\Models\Article;
+use App\Models\Reviewer;
 use App\Models\User;
 
 
@@ -16,7 +16,7 @@ class ReviewArticle extends Model
 {
     use HasFactory;
 
-    public function Article(): BelongsToMany
+    public function Reviewer(): BelongsToMany
     {
         return $this->belongsToMany(Article::class);
     }

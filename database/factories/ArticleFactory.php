@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Article;
 use App\Models\User;
 use App\Models\Topic;
+use App\Models\ReviewArticle;
 use Carbon\Carbon;
 
 /**
@@ -32,7 +33,7 @@ class ArticleFactory extends Factory
             'topic_id' => function () {
                 return Topic::inRandomOrder()->first()->id;
             },
-            'review_article_id' => null,
+            'review_article_id' => ReviewArticle::all()->random()->id,
             'auth_conf_file' => null,
             'title' => $this->faker->sentence,
             'abstract' => $this->faker->paragraph,

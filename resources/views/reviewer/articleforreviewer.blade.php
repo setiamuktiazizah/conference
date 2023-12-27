@@ -22,7 +22,7 @@
                         <h2>List of Articles</h2>
                     </div>
                     <div class="col-md-4">
-                        <h2>Name of Reviewer</h2>
+                        <h2>Name of Reviewer: {{$reviewerName}}</h2>
                     </div>
                 </div>
                 <div class="d-flex justify-content-start">
@@ -39,21 +39,24 @@
                     <thead class="text-center">
                         <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Conference</th>
+                        <th scope="col">Conference Name</th>
                         <th scope="col">Tittle</th>
                         <th scope="col">Topic</th>
                         <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="text-center"></td>
+                        @foreach ($articles as $article)
+                        <tr>
+                            <td>{{$loop-> iteration}}</td>
+                            <td>{{$article->ConferenceName}}</td>
+                            <td>{{$article->Tittle}}</td>
+                            <td>{{$article->Topic}}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-secondary">view article</button>
+                                <i class="bi bi-pencil btn-outline-primary" type="button"></i>
                             </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('conference_id')->references('id')->on('conferences');
             $table->foreign('topic_id')->references('id')->on('topics');
-            $table->foreign('review_article_id')->references('id')->on('articles');
+            $table->foreign('review_article_id')->references('id')->on('review_articles');
             $table->foreign('auth_conf_file')->references('id')->on('author_conference_files');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');

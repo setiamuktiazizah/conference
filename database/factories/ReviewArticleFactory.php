@@ -20,7 +20,7 @@ class ReviewArticleFactory extends Factory
         $decision = $this->faker->randomElement(['approved', 'rejected']);
         return [
             //
-            'article_id' => $this->faker->numberBetween(2, 10),
+            'reviewer_id' => $this->faker->numberBetween(2, 10),
             'user_id' => $this->faker->numberBetween(2, 10),
             'comment' => $this->faker->sentence(4),
             'final_decision' => $decision,

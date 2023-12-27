@@ -40,22 +40,20 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Institution</th>
-                        <th>Address</th>
                         <th>Action</th>
                     </thead>
                     <tbody>
-                      {{-- @foreach ($conferences as $conference)     
+                      @foreach ($users as $user)     
                         <tr>
-                          <td>{{$conference->Topic->name}}</td> 
-                          <td>{{$conference->name}}</td>
-                          <td>{{$conference->venue}}</td>
-                          <td>{{$conference->Schedule->start_date}}</td>
-                          <td>{{$conference->Schedule->end_date}} </td>
-                          <td class="text-center align-middle"><button class="btn btn-primary">
-                            <i class="fas fa-plus"></i>
-                          </button></td>
+                          <td>{{$user->name}}</td> 
+                          <td>{{$user->email}}</td>
+                          <td>{{$user->institution}}</td>
+                          <td class="text-center align-middle">
+                            <button class="btn btn-primary"><i class="bi bi-plus-circle"></i></button>
+                            <button class="btn btn-primary"><i class="bi bi-dash-circle"></i></button>
+                        </td>
                         </tr>
-                      @endforeach --}}
+                      @endforeach
                     </tbody>
                 </table>
             </div>

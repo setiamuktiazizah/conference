@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 
 
 use App\Models\Article;
@@ -16,6 +17,9 @@ use App\Models\ReviewArticle;
 use App\Models\Schedule;
 use App\Models\Price;
 use App\Models\Payment;
+use App\Models\Role;
+use App\Models\RoleOwner;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,15 +34,22 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::factory()->count(10)->create();
+        User::factory()
+        ->count(10)
+        ->state(new Sequence(
+            ['is_partner' => 1],
+            ['is_partner' => 0],
+        ))
+        ->create();
         Topic::factory()->count(10)->create();
         MasterActivity::factory()->count(10)->create();
         Schedule::factory()->count(10)->create();
         Conference::factory()->count(10)->create();
         Reviewer::factory()->count(10)->create();
-        Article::factory()->count(10)->create();
         ReviewArticle::factory()->count(10)->create();
+        Article::factory()->count(10)->create();
         Price::factory()->count(10)->create();
         Payment::factory()->count(10)->create();
+        RoleOwner::factory()->count(10)->create();
     }
 }
