@@ -14,7 +14,7 @@
           <div class="card-body">
             <h5 class="card-title">Register for the Partner</h5>
             <p class="card-text">Be Webdemia's partner and Register Your Conference</p>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
           </div>
         </div>
 

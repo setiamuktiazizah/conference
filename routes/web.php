@@ -34,6 +34,10 @@ Route::get('/help', function () {
     return view('user.help');
 });
 
+Route::get('/registerconference', function () {
+    return view('registerconference');
+});
+
 Route::get('/submitpaperdetail', function () {
     return view('user.submitpaper-detail');
 });
