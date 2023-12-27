@@ -34,6 +34,34 @@ Route::get('/help', function () {
     return view('user.help');
 });
 
+Route::get('/submitpaperdetail', function () {
+    return view('user.submitpaper-detail');
+});
+
+Route::get('/user-profile', function () {
+    return view('user.user-profile');
+});
+
+Route::get('/user-profile/edit', function () {
+    return view('user.user-profile-edit');
+});
+
+Route::get('/user-chairing', function () {
+    return view('user.user-chairing');
+});
+
+Route::get('/registerpart1', function () {
+    return view('user.register-part-1');
+});
+
+Route::get('/registerpart2', function () {
+    return view('user.register-part-2');
+});
+
+Route::get('/registerpart3', function () {
+    return view('user.register-part-3');
+});
+
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });

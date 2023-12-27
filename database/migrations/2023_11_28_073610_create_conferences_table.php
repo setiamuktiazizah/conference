@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('schedule_id');
             $table->string('name');
             $table->string('venue');
+            $table->string('url_venue');
             $table->string('type');
             $table->unsignedBigInteger('total_reviewer');
             $table->string('logo');
