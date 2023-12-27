@@ -10,10 +10,13 @@
         <h4>Conference Management System</h4>
         <p data-aos="fade-up" data-aos-delay="100">Facere distinctio molestiae nisi fugit tenetur repellat non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit</p>
 
-        <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
-          <input type="text" class="form-control" placeholder="ZIP code or CitY">
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Register for the Partner</h5>
+            <p class="card-text">Be Webdemia's partner and Register Your Conference</p>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </div>
+        </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
 

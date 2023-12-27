@@ -6,6 +6,7 @@ use App\Http\Controllers\SubmitPaperController;
 use App\Http\Controllers\PaperInfoController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\Guestlistcontroller;
+use App\Http\Controllers\ListOfConferenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,10 +60,7 @@ Route::get('/signup', function () {
 
 Route::post('/signup', [RegisterController::class, 'register']);
 
-
-// Route::get('/submitpaper', function () {
-//     return view('submitpaper');
-// });
+Route::get('/listofconference', [ListOfConferenceController::class, 'index']);
 
 Route::get('/submitregisterpaper', function () {
     return view('submitregisterpaper');
@@ -76,9 +74,10 @@ Route::get('/submitaddauthor', function () {
     return view('submitaddauthor');
 });
 
-Route::get('/listofconference', function () {
-    return view('admin.listofconference');
-});
+// Route::get('/listofconference', function () {
+//     return view('admin.listofconference');
+// });
+
 
 Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');

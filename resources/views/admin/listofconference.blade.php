@@ -10,7 +10,57 @@
     <title>Dashboard Admin</title>
 </head>
 <body>
-    <div class="content-wrapper" style="background-color: #293677">      
+    <div class="content-wrapper" style="background-color: #293677">
+        <!-- Content Header (Page header) -->
+
+        <div class="content-header"></div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>List of Conference</h2>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="form-inline">
+                        <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" style="background-color: white; color:black" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                            <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-header"></div>
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Area</th>
+                        <th>Conference</th>
+                        <th>Venue</th>
+                        <th>When</th>
+                        <th>Deadline</th>
+                        <th>Submit</th>
+                    </thead>
+                    <tbody>
+                      @foreach ($conferences as $conference)     
+                        <tr>
+                          <td>{{$conference->Topic->name}}</td> 
+                          <td>{{$conference->name}}</td>
+                          <td>{{$conference->venue}}</td>
+                          <td>{{$conference->Schedule->start_date}}</td>
+                          <td>{{$conference->Schedule->end_date}} </td>
+                          <td class="text-center align-middle"><button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                          </button></td>
+                        </tr>
+                      @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
