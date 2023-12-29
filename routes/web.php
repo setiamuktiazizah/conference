@@ -80,7 +80,9 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']);
+Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']) -> name('admin.guestlist.list');
+
+Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser']) -> name('admin.guestlist.hapus');
 
 Route::get('/articlelist', function () {
     return view('reviewer.articlelist');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //
         Schema::table('articles', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('conference_id')->references('id')->on('conferences');
             $table->foreign('topic_id')->references('id')->on('topics');
             $table->foreign('review_article_id')->references('id')->on('review_articles');

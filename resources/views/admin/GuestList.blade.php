@@ -51,7 +51,13 @@
                             <td>{{$guest->name}}</td>
                             <td>{{$guest->email}}</td>
                             <td class="text-center">
-                                <i class="bi bi-pencil btn-outline-primary" type="button"></i>
+                                    <i class="bi bi-pencil btn-outline-primary" type="button"></i>
+                                <form action="{{ route('admin.guestlist.hapus', $guest->id) }}" method="post">
+                                    @csrf
+                                    <button type="submit">
+                                        <i class="bi bi-trash btn-outline-primary"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
