@@ -86,6 +86,11 @@ Route::get('/timescheduling4', function () {
     return view('adminseminar.timescheduling4');
 });
 
+Route::get('/conferenceregistrationdetails', function () {
+    return view('adminseminar.conferenceregistrationdetails');
+});
+
+
 Route::get('/payment', function () {
     return view('adminseminar.payment');
 });

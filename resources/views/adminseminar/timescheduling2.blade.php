@@ -87,7 +87,7 @@
               <br>
               <div class="modal-footer">
                 <a href="{{url('bundling')}}"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button></a>
-                <a href="{{url('payment')}}"><button type="button" class="btn btn-primary">Pay</button></a>
+                <a href="{{url('conferenceregistrationdetails')}}"><button type="button" class="btn btn-primary">Save</button></a>
               </div>
             </div>
           </div>
