@@ -24,19 +24,19 @@
                 </div>
                 <div class="row gx-3">
                 <div class="col">
-                <a href="{{url('registerconference')}}">
+                <a href="{{url('registerconference4')}}">
                 <i class="bi bi-journal-plus"></i>
                    Register Conference
                   </a>
                 </div>
                 <div class="col">
-                  <a href="{{url('addtopic')}}">
+                  <a href="{{url('addtopic4')}}">
                   <i class="bi bi-person-fill-add"></i>
                   Add Topic
                   </a>
                 </div>
                 <div class="col">
-                  <a href="{{url('timescheduling')}}">
+                  <a href="{{url('timescheduling4')}}">
                   <i class="bi bi-file-arrow-up"></i>
                   Time Scheduling
                   </a>
