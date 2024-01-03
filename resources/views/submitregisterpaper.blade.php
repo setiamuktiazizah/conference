@@ -67,7 +67,7 @@
           </label>
         </div>
         <div class="col-6">
-              <a href="{{url('submituploadreviewmanuscript')}}"><button type="button" class="btn btn-primary">Add Author</button></a>
+              <a href="{{url('submitaddauthor')}}"><button type="button" class="btn btn-primary">Add Author</button></a>
         </div>
       </div>
     </div>

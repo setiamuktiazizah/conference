@@ -24,7 +24,7 @@
             <h5 class="card-title">Silver $500</h5>
             <p class="card-text">For Small Conference 50-80 Participants</p>
             <p class="card-text">HYBRID</p>
-            <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
+            <a href="/registerconference2"><button type="submit" class="btn btn-primary">Register</button></a>
           </div>
         </div><br>
 
@@ -33,7 +33,7 @@
               <h5 class="card-title">Gold $1000</h5>
               <p class="card-text">For Medium Conference 80-200 Participants</p>
               <p class="card-text">HYBRID</p>
-              <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
+              <a href="/registerconference3"><button type="submit" class="btn btn-primary">Register</button></a>
             </div>
           </div><br>
 
@@ -42,7 +42,7 @@
               <h5 class="card-title">Platinum $1200</h5>
               <p class="card-text">For Medium Conference 200-300 Participants</p>
               <p class="card-text">HYBRID</p>
-              <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
+              <a href="/registerconference4"><button type="submit" class="btn btn-primary">Register</button></a>
             </div>
           </div><br>
 
