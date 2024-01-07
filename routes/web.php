@@ -82,11 +82,11 @@ Route::get('/admin', function () {
 
 Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']) -> name('admin.guestlist.list');
 
+Route::get('/edituser/{user}', [Guestlistcontroller::class, 'GetDataUser'])->name('admin.guestlist.getdata');
+Route::post('/edituser/{user}', [Guestlistcontroller::class, 'EditUser'])->name('admin.guestlist.edit');
+
 Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser']) -> name('admin.guestlist.hapus');
 
-Route::get('/articlelist', function () {
-    return view('reviewer.articlelist');
-});
 
 Route::get('/articlereviewer/{user}', [ArticleforReviewerController::class, 'GetAllArtcileforReviewer']);
 

@@ -51,7 +51,9 @@
                             <td>{{$guest->name}}</td>
                             <td>{{$guest->email}}</td>
                             <td class="text-center">
-                                    <i class="bi bi-pencil btn-outline-primary" type="button"></i>
+                                <a href="{{ route('admin.guestlist.getdata', $guest->id) }}">
+                                    <i class="bi bi-pencil btn-outline-primary" type="submit"></i>
+                                </a>
                                 <form action="{{ route('admin.guestlist.hapus', $guest->id) }}" method="post">
                                     @csrf
                                     <button type="submit">
