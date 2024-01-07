@@ -36,6 +36,74 @@ Route::get('/bundling', function () {
     return view('bundling');
 });
 
+Route::get('/registerconference', function () {
+    return view('adminseminar.registerconference');
+});
+
+Route::get('/registerconference2', function () {
+    return view('adminseminar.registerconference2');
+});
+
+Route::get('/registerconference3', function () {
+    return view('adminseminar.registerconference3');
+});
+
+Route::get('/registerconference4', function () {
+    return view('adminseminar.registerconference4');
+});
+
+
+Route::get('/addtopic', function () {
+    return view('adminseminar.addtopic');
+});
+
+Route::get('/addtopic2', function () {
+    return view('adminseminar.addtopic2');
+});
+
+Route::get('/addtopic3', function () {
+    return view('adminseminar.addtopic3');
+});
+
+Route::get('/addtopic4', function () {
+    return view('adminseminar.addtopic4');
+});
+
+
+Route::get('/timescheduling', function () {
+    return view('adminseminar.timescheduling');
+});
+
+Route::get('/timescheduling2', function () {
+    return view('adminseminar.timescheduling2');
+});
+
+Route::get('/timescheduling3', function () {
+    return view('adminseminar.timescheduling3');
+});
+
+Route::get('/timescheduling4', function () {
+    return view('adminseminar.timescheduling4');
+});
+
+Route::get('/conferenceregistrationdetails', function () {
+    return view('adminseminar.conferenceregistrationdetails');
+});
+
+
+Route::get('/payment', function () {
+    return view('adminseminar.payment');
+});
+Route::get('/payment2', function () {
+    return view('adminseminar.payment2');
+});
+Route::get('/payment3', function () {
+    return view('adminseminar.payment3');
+});
+Route::get('/payment4', function () {
+    return view('adminseminar.payment4');
+});
+
 
 Route::get('/accpartner', [ListofPartnerController::class, 'GetAllPartner']);
 
