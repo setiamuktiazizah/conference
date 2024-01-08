@@ -35,7 +35,7 @@
                 <td>{{$conference->name}}</td>
                 <td>{{$conference->venue}}</td>
                 <td>{{$conference->Schedule->start_date}}</td>
-                <td a class="text-center align-middle"><a href="{{url('bundling')}}"><button class="btn btn-primary">
+                <td a class="text-center align-middle"><a href="{{ route('bundling', ['id' => $conference->id]) }}"><button class="btn btn-primary">
                   Choose
                 </button></a></td>
                 <td class="text-center align-middle">

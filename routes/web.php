@@ -13,7 +13,6 @@ use App\Http\Controllers\ListofPartnerController;
 use App\Http\Controllers\ArticleforReviewerController;
 use App\Http\Controllers\PartnerConferenceController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\AddSponsorController;
 use Illuminate\Support\Facades\Route;
 
@@ -67,6 +66,8 @@ Route::post('/registerpartner', [RegisterController::class, 'registerpartner']);
 Route::get('/bundling', function () {
     return view('partner.bundling');
 });
+
+Route::get('/bundling/{id}', [PartnerConferenceController::class, 'bundling'])->name('bundling');
 
 Route::post('/bundling', [PartnerConferenceController::class, 'packet']);
 Route::get('/partner/{id}', [PartnerConferenceController::class, 'partner']);

@@ -34,4 +34,10 @@ class PartnerConferenceController extends Controller
         return view('partner.listConference', ['conferences' => $conferences]);
     }
     
-}
+    public function bundling($id)
+    {
+        // Lakukan sesuatu dengan $id (ID konferensi)
+        return view('partner.bundlingChoose', ['id' => $id]);
+    }
+
+}   
