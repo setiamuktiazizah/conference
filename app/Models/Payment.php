@@ -15,6 +15,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Payment extends Model
 {
     use HasFactory;
+    protected $guarded =[];
+    // protected $fillable = [
+    //     'user_id',
+    //     'price_conference_id',
+    //     'conference_id',
+    //     'value',
+    //     'payment_receipt',
+    //     'payment_date',
+    //     'status',
+    // ];
 
     public function Price(): BelongsTo
     {

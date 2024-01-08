@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SubmitPaperController;
@@ -10,6 +11,9 @@ use App\Http\Controllers\ListOfConferenceController;
 use App\Http\Controllers\ListofPartnerController;
 use App\Http\Controllers\ArticleforReviewerController;
 use App\Http\Controllers\PartnerConferenceController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\AddSponsorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -161,6 +165,11 @@ Route::get('/registerpart3', function () {
     return view('user.register-part-3');
 });
 
+// Route::post('/checkout', [OrderController::class, 'checkout']);
+Route::get('/checkout/{nib}', [OrderController::class, 'checkout']);
+
+Route::get('/invoice/{id}', [OrderController::class, 'invoice']);
+
 
 Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser'])->name('admin.guestlist.list');
 
@@ -200,10 +209,18 @@ Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');
 });
 
-Route::get('/konfigurasipembayaran', function () {
+Route::get('/paymentconfiguration', function () {
     return view('bendahara.konfigurasi');
 });
 
-Route::get('/paymentstatus', function () {
-    return view('bendahara.paymentstatus');
-});
+Route::get('/paymentstatus', [PaymentController::class, 'index']);
+
+Route::post('/addsponsors', [AddSponsorController::class, 'upload'])->name('upload');
+Route::get('/addsponsors', [AddSponsorController::class, 'index']);
+
+Route::get('/sponsors', [SponsorController::class, 'index']);
+Route::delete('/deleteSponsor/{id}', [SponsorController::class, 'destroy'])->name('deleteSponsor');
+
+// Route::get('/sponsors', function () {
+//     return view('adminseminar.sponsors');
+// });

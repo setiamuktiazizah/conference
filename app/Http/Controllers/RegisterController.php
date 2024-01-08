@@ -42,6 +42,8 @@ class RegisterController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/');
+        $nib = $validatedData['nib'];
+
+        return redirect('/checkout/' . $nib)->with('nib', $nib);
     }
 }
