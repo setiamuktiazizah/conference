@@ -193,7 +193,6 @@ Route::get('/submitaddauthor', function () {
 //     return view('admin.listofconference');
 // });
 
-
 Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');
 });
