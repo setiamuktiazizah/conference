@@ -15,7 +15,12 @@ class RoleOwner extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'user_id',
+        'role_id',
+        'created_by',
+    ];
+
 
     public function User(): HasMany
     {

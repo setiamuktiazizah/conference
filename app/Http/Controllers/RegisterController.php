@@ -20,7 +20,9 @@ class RegisterController extends Controller
 
         $validatedData['password'] = hash::make($validatedData['password']);
 
-        User::create($validatedData);
+        $user = User::create($validatedData);
+        $user->roleOwner()->create(['role_id' => 4, 'created_by' => $user->id]);
+        
 
         return redirect('/');
     }
