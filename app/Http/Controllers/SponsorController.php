@@ -1,29 +1,33 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
+use Illuminate\Support\Facades\DB;  
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-
-
-use App\Models\Conference;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Sponsor;
+use App\Models\Conference;
 
- 
 class SponsorController extends Controller
 {
-    /**
-     * Handle an authentication attempt.
-     */
     public function index(Request $request)
     {
         $sponsors = DB::table('sponsors')
-                    ->select('conferences.name AS name', 'sponsors.name AS sponsor')
-                    ->join('conferences', 'sponsors.conference_id', '=', 'conferences.id')
-                    ->get();
+            ->join('conferences', 'sponsors.conference_id', '=', 'conferences.id')
+            ->select('sponsors.*', 'conferences.name as conference_name')
+            ->get();
 
-        return view('admin.listofsponsor', compact('sponsors'));
+        $sponsors = Sponsor::hydrate($sponsors->toArray());
+
+        return view('adminseminar.sponsors', ['sponsors' => $sponsors]);
+    }
+
+    public function destroy($id)
+    {
+        $item = Sponsor::findOrFail($id);
+        Storage::delete($item->logo);
+        $item->delete();
+
+        return redirect('/sponsors');
     }
 }

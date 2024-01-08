@@ -24,6 +24,8 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'institution',
+        'nib',
+        'is_partner',
         'created_by',
         'updated_at',
         'created_at'

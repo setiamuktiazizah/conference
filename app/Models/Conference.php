@@ -14,11 +14,14 @@ use App\Models\Schedule;
 use App\Models\Topic;
 use App\Models\Review;
 use App\Models\Sponsor;
+use App\Models\PriceConference;
+use App\Models\Payment;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use PhpOffice\PhpSpreadsheet\Calculation\Financial\CashFlow\Constant\Periodic\Payments;
 
 class Conference extends Model
 {
@@ -68,9 +71,9 @@ class Conference extends Model
         return $this->belongsTo(Schedule::class);
     }
 
-    public function Sponsor(): HasMany
+    public function Sponsor(): BelongsToMany
     {
-        return $this->hasMany(Sponsor::class);
+        return $this->belongsToMany(Sponsor::class);
     }
 
     // public function Topic(): BelongsToMany
@@ -80,5 +83,15 @@ class Conference extends Model
     public function Topic(): BelongsTo
     {
         return $this->belongsTo(Topic::class);
+    }
+
+    public function PriceConference(): HasMany
+    {
+        return $this->hasMany(PriceConference::class);
+    }
+
+    public function Payment(): BelongsTo
+    {
+        return $this->belongsTo(Payment::class);
     }
 }

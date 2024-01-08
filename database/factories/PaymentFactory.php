@@ -5,7 +5,8 @@ namespace Database\Factories;
 use App\Models\Payment;
 use App\Models\User;
 use App\Models\Price;
-
+use App\Models\PriceConference;
+use App\Models\Conference;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use PhpOffice\PhpSpreadsheet\Calculation\Financial\CashFlow\Constant\Periodic\Payments;
 
@@ -29,8 +30,11 @@ class PaymentFactory extends Factory
             'user_id' => function () {
                 return User::factory()->create()->id;
             },
-            'price_id' => function () {
-                return Price::factory()->create()->id;
+            'price_conference_id' => function () {
+                return PriceConference::factory()->create()->id;
+            },
+            'conference_id' => function () {
+                return Conference::factory()->create()->id;
             },
             'value' => $this->faker->randomFloat(2, 50, 500),
             'payment_receipt' => $this->faker->word . '.pdf', // Assuming payment receipt is a file name

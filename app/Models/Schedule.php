@@ -14,6 +14,8 @@ class Schedule extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function Conference(): HasOne
     {
         return $this->hasOne(Conference::class);

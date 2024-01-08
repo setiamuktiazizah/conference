@@ -12,6 +12,8 @@ class Form extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function Review(): BelongsToMany
     {
         return $this->belongsToMany(Review::class);

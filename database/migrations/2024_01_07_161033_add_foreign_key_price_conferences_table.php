@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::table('payments', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('price_conference_id')->references('id')->on('price_conferences');
+        Schema::table('price_conferences', function (Blueprint $table) {
             $table->foreign('conference_id')->references('id')->on('conferences');
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
@@ -27,9 +25,8 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::table('prices', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropForeign(['price_id']);
+        Schema::table('price_conferences', function (Blueprint $table) {
+            $table->dropForeign(['conference_id']);
             $table->dropForeign(['created_by']);
             $table->dropForeign(['updated_by']);
         });

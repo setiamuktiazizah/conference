@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('price_conferences', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('price_conference_id');
             $table->unsignedBigInteger('conference_id');
-            $table->float('value');
-            $table->string('payment_receipt');
-            $table->dateTime('payment_date');
-            $table->string('status');
+            $table->string('name');
+            $table->float('price_idr');
+            $table->float('price_usd');
+            $table->unsignedBigInteger('min_participant');
+            $table->unsignedBigInteger('max_participant');
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('price_conferences');
     }
 };

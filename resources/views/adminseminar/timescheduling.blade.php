@@ -46,46 +46,47 @@
               <h6><b>Submiting Paper Date</b></h6>
             <div class="row justify-content-around">  
               <div class="col-5">
-                <input type="name" class="form-control" placeholder="Start Date">
+                <input type="datetime-local" class="form-control" placeholder="Start Date">
               </div>
               <div class="col-5">
-                <input type="email" class="form-control" placeholder="End Date">
+                <input type="datetime-local" class="form-control" placeholder="End Date">
               </div>
             </div>
             <br>
             <h6><b>Review Paper Date</b></h6>
             <div class="row justify-content-around">  
               <div class="col-5">
-                <input type="name" class="form-control" placeholder="Start Date">
+                <input type="datetime-local" class="form-control" placeholder="Start Date">
               </div>
               <div class="col-5">
-                <input type="email" class="form-control" placeholder="End Date">
+                <input type="datetime-local" class="form-control" placeholder="End Date">
               </div>
             </div>
             <br>
             <h6><b>Upload Final Manuscript and Presentation Date</b></h6>
             <div class="row justify-content-around">  
               <div class="col-5">
-                <input type="name" class="form-control" placeholder="Start Date">
+                <input type="datetime-local" class="form-control" placeholder="Start Date">
               </div>
               <div class="col-5">
-                <input type="email" class="form-control" placeholder="End Date">
+                <input type="datetime-local" class="form-control" placeholder="End Date">
               </div>
             </div>
             <br>
             <h6><b>Conference Date</b></h6>
             <div class="row justify-content-around">  
               <div class="col-5">
-                <input type="name" class="form-control" placeholder="Start Date">
+                <input type="datetime-local" class="form-control" placeholder="Start Date">
               </div>
               <div class="col-5">
-                <input type="email" class="form-control" placeholder="End Date">
+                <input type="datetime-local" class="form-control" placeholder="End Date">
               </div>
             </div>
             <br>
               
               <br>
               <div class="modal-footer">
+                <a href="{{url('addtopic')}}"><button type="button" class="btn btn-primary">Back</button></a>
                 <a href="{{url('bundling')}}"><button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button></a>
                 <a href="{{url('conferenceregistrationdetails')}}"><button type="button" class="btn btn-primary">Save</button></a>
               </div>
