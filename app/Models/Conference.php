@@ -16,6 +16,7 @@ use App\Models\Review;
 use App\Models\Sponsor;
 use App\Models\PriceConference;
 use App\Models\Payment;
+use App\Models\User;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -44,6 +45,11 @@ class Conference extends Model
             ->select('t1.name', 't1.venue', 't2.name as topic', 't3.start_date', 't3.end_date')
             ->groupBy('t1.id');
         // ->get();
+    }
+
+    public function User(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function Article(): HasMany

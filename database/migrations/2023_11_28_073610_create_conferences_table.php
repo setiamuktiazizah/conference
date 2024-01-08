@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('conferences', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('reviewer_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('topic_id');
             $table->unsignedBigInteger('schedule_id');
             $table->string('name');

@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\RoleOwner;
+use App\Models\Conference;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -50,8 +54,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function roleOwner()
+    public function roleOwner(): HasMany
     {
-        return $this->hasmany(RoleOwner::class);
+        return $this->hasMany(RoleOwner::class);
+    }
+
+    public function Conference(): HasMany
+    {
+        return $this->hasMany(Conference::class);
     }
 }
