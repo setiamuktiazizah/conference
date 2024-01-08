@@ -35,10 +35,6 @@ Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
-Route::get('/bundling', function () {
-    return view('bundling');
-});
-
 // Admin
 
 Route::get('/auth-admin', function () {
@@ -51,8 +47,15 @@ Route::put('/update-partner-status/{userId}', [ListofPartnerController::class, '
 
 
 // Partner
+Route::get('/registerpartner', function () {
+    return view('partner.registerpartner');
+});
 
 Route::post('/registerpartner', [RegisterController::class, 'registerpartner']);
+
+Route::get('/bundling', function () {
+    return view('partner.bundling');
+});
 
 Route::post('/bundling', [PartnerConferenceController::class, 'packet']);
 
