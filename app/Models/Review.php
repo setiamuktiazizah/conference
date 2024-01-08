@@ -16,6 +16,8 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function Conference(): HasMany
     {
         return $this->hasMany(Conference::class);

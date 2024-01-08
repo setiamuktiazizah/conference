@@ -15,7 +15,7 @@ class RoleOwner extends Model
 {
     use HasFactory;
 
-
+    protected $guarded = ['id'];
 
     public function User(): HasMany
     {

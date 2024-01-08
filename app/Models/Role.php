@@ -12,6 +12,8 @@ class Role extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function RoleOwner(): HasMany
     {
         return $this->hasMany(RoleOwner::class);

@@ -15,6 +15,8 @@ class AuthorConferenceFile extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function Article(): HasOne
     {
         return $this->hasOne(Article::class);

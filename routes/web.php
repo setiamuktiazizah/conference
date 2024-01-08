@@ -9,6 +9,7 @@ use App\Http\Controllers\Guestlistcontroller;
 use App\Http\Controllers\ListOfConferenceController;
 use App\Http\Controllers\ListofPartnerController;
 use App\Http\Controllers\ArticleforReviewerController;
+use App\Http\Controllers\PartnerConferenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// User
 
 Route::get('/', function () {
     return view('home');
@@ -35,6 +38,26 @@ Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::get('/bundling', function () {
     return view('bundling');
 });
+
+// Admin
+
+Route::get('/auth-admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/accpartner', [ListofPartnerController::class, 'GetAllPartner']);
+
+Route::put('/update-partner-status/{userId}', [ListofPartnerController::class, 'updatePartnerStatus'])->name('updatePartnerStatus');
+
+
+// Partner
+Route::get('/registerpartner', function () {
+    return view('partner.registerpartner');
+});
+
+Route::post('/registerpartner', [RegisterController::class, 'registerpartner']);
+
+Route::post('/bundling', [PartnerConferenceController::class, 'packet']);
 
 Route::get('/registerconference', function () {
     return view('adminseminar.registerconference');
@@ -105,15 +128,9 @@ Route::get('/payment4', function () {
 });
 
 
-Route::get('/accpartner', [ListofPartnerController::class, 'GetAllPartner']);
-
 
 Route::get('/help', function () {
     return view('user.help');
-});
-
-Route::get('/registerpartner', function () {
-    return view('registerpartner');
 });
 
 Route::get('/conferencedetail', function () {
@@ -144,13 +161,10 @@ Route::get('/registerpart3', function () {
     return view('user.register-part-3');
 });
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
 
-Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']) -> name('admin.guestlist.list');
+Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser'])->name('admin.guestlist.list');
 
-Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser']) -> name('admin.guestlist.hapus');
+Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser'])->name('admin.guestlist.hapus');
 
 Route::get('/articlelist', function () {
     return view('reviewer.articlelist');

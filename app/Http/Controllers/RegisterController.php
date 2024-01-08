@@ -13,14 +13,30 @@ class RegisterController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'max:50', 'min:1'],
-            'first_name' => ['required', 'max:50', 'min:1'],
-            'last_name' => ['required', 'max:50', 'min:1'],
             'institution' => ['required', 'max:50', 'min:1'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required'],
         ]);
 
         $validatedData['password'] = hash::make($validatedData['password']);
+
+        User::create($validatedData);
+
+        return redirect('/');
+    }
+
+    public function registerpartner(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => ['required', 'max:50', 'min:1'],
+            'first_name' => ['required', 'max:50', 'min:1'],
+            'last_name' => ['required', 'max:50', 'min:1'],
+            'institution' => ['required', 'max:50', 'min:1'],
+            'email' => ['required', 'email', 'unique:users,email'],
+            'nib' => ['required', 'numeric', 'digits:7', 'unique:users,nib'],
+        ]);
+
+        $validatedData['password'] = Hash::make('password');
 
         User::create($validatedData);
 
