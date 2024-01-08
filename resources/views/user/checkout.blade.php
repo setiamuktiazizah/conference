@@ -48,12 +48,12 @@
             onSuccess: function(result){
               /* You may add your own implementation here */
             //   alert("payment success!"); console.log(result);
-            window.location.href = 'user/invoice/{{ $payment->id }}'
+            window.location.href = 'user.invoice/{{ $payment->id }}'
             },
             onPending: function(result){
               /* You may add your own implementation here */
             //   alert("wating your payment!"); console.log(result);
-            window.location.href = 'user/invoice/{{ $payment->id }}'
+            window.location.href = 'user.invoice/{{ $payment->id }}'
             },
             onError: function(result){
               /* You may add your own implementation here */
