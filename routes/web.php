@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SubmitPaperController;
@@ -163,6 +164,11 @@ Route::get('/registerpart2', function () {
 Route::get('/registerpart3', function () {
     return view('user.register-part-3');
 });
+
+// Route::post('/checkout', [OrderController::class, 'checkout']);
+Route::get('/checkout/{nib}', [OrderController::class, 'checkout']);
+
+Route::get('/invoice/{id}', [OrderController::class, 'invoice']);
 
 
 Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser'])->name('admin.guestlist.list');
