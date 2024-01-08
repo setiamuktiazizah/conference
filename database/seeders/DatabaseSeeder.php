@@ -19,6 +19,7 @@ use App\Models\Price;
 use App\Models\Payment;
 use App\Models\Role;
 use App\Models\RoleOwner;
+use App\Models\Sponsor;
 
 
 class DatabaseSeeder extends Seeder
@@ -51,5 +52,6 @@ class DatabaseSeeder extends Seeder
         Price::factory()->count(10)->create();
         Payment::factory()->count(10)->create();
         RoleOwner::factory()->count(10)->create();
+        Sponsor::factory()->count(10)->create();
     }
 }

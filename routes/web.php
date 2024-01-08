@@ -6,6 +6,7 @@ use App\Http\Controllers\SubmitPaperController;
 use App\Http\Controllers\PaperInfoController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\Guestlistcontroller;
+use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\ListOfConferenceController;
 use App\Http\Controllers\ListofPartnerController;
 use App\Http\Controllers\ArticleforReviewerController;
@@ -26,7 +27,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/submitpaper', [SubmitPaperController::class, 'index'])->name('submitpaper');
+Route::middleware(['auth:user'])->group(function () {
+    Route::get('/submitpaper', [SubmitPaperController::class, 'index'])->name('submitpaper');
+    Route::get('/submitregisterpaper/{confid}', [SubmitPaperController::class, 'paperview'])->name('submit.register.paper');
+    Route::get('/submitaddauthor/{confid}', [SubmitPaperController::class, 'addauthorview'])->name('submit.register.addauthor');
+    Route::get('/submituploadreviewmanuscript/{confid}', [SubmitPaperController::class, 'uploadview'])->name('submit.register.upload');
+    Route::post('/submitpaper', [SubmitPaperController::class, 'submitpaper'])->name('submit.register.store');
+});
 
 Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo');
 
@@ -39,6 +46,9 @@ Route::get('/bundling', function () {
 Route::get('/registerconference', function () {
     return view('adminseminar.registerconference');
 });
+
+Route::get('/sponsorlist', [SponsorController::class, 'index'])->name('schedule');
+
 
 Route::get('/registerconference2', function () {
     return view('adminseminar.registerconference2');
@@ -167,7 +177,9 @@ Route::get('/login', function () {
     return view('user/login');
 });
 
-Route::post('/login', [LoginController::class, 'auth']);
+Route::post('/login', [LoginController::class, 'auth']) -> name('login');
+
+Route::get('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 Route::get('/signup', function () {
     return view('user/signup');
@@ -177,26 +189,17 @@ Route::post('/signup', [RegisterController::class, 'register']);
 
 Route::get('/listofconference', [ListOfConferenceController::class, 'index']);
 
-Route::get('/submitregisterpaper', function () {
-    return view('submitregisterpaper');
-})->name('submit.register.paper');
+
 
 // Route::get('/paperinfo', function () {
 //     return view('paperinfo');
 // });
 
-Route::get('/submitaddauthor', function () {
-    return view('submitaddauthor');
-});
+
 
 // Route::get('/listofconference', function () {
 //     return view('admin.listofconference');
 // });
-
-
-Route::get('/submituploadreviewmanuscript', function () {
-    return view('submituploadreviewmanuscript');
-});
 
 Route::get('/konfigurasipembayaran', function () {
     return view('bendahara.konfigurasi');

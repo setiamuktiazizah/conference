@@ -36,7 +36,7 @@
                 <td>{{$conference->venue}}</td>
                 <td>{{$conference->Schedule->start_date}}</td>
                 <td>{{$conference->Schedule->end_date}} </td>
-                <td a class="text-center align-middle"><a href="{{url('submitregisterpaper')}}"><button class="btn btn-primary">
+                <td a class="text-center align-middle"><a href="{{ route('submit.register.paper', $conference->id) }}"><button class="btn btn-primary">
                   <i class="fas fa-plus"></i>
                 </button></a></td>
               </tr>
