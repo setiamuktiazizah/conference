@@ -19,7 +19,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Register Conference (Free Trial Package)</h2>
+                        <h2>Register Conference</h2>
                     </div>
                 </div>
                 <div class="row gx-3">
@@ -44,25 +44,25 @@
               </div>
               <br>
               <div class="form-group">
+                <label for="name">Name of Conference:</label>
                 <input type="name" class="form-control" placeholder="Name of Conference">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Location">
+                <label for="location">Location</label>
+                <input type="venue" class="form-control" placeholder="Name of Location">
+                <input type="url" class="form-control" placeholder="Location Link">
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Type of Conference (Online/ Offline/ Hybrid)">
+                <label for="conferenceType">Type of Conference:</label>
+                <select id="conferenceType" class="form-control">
+                    <option value="Online">Online</option>
+                    <option value="Offline">Offline</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="Number of Reviewers (min 3)">
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Name of Reviewer 1">
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Name of Reviewer 2">
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Name of Reviewer 3">
+                <label for="total_reviewer">Total Reviewer</label>
+                <input type="number" class="form-control" placeholder="Number of Reviewers">
               </div>
               <br>
               <div class="modal-footer">

@@ -22,49 +22,50 @@
           </div>
         </div>
       </section>
-      <div class="row gy-4">
-        <div class="col-lg-3">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Trial for Free</h5>
-              <p class="card-text">For Small Conference 10 Participants</p>
-              <p class="card-text">ONLINE</p>
-              <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
-            </div><br>
-            <div class="card" style="width: 18rem;">
+      <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="col">
+            <div class="card" style="width: 25rem;">
               <div class="card-body">
-                <h5 class="card-title">Silver $500</h5>
-                <p class="card-text">For Small Conference 80 Participants</p>
-                <p class="card-text">HYBRID</p>
-                <a href="/registerconference2"><button type="submit" class="btn btn-primary">Register</button></a>
+                <h5 class="card-title">Trial for Free</h5>
+                <p class="card-text">For Small Conference 10 Participants</p>
+                <p class="card-text">ONLINE</p>
+                <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
               </div>
             </div><br>
-            <div class="card" style="width: 18rem;">
+          </div>
+          <div class="col">
+              <div class="card" style="width: 25rem;">
                 <div class="card-body">
-                  <h5 class="card-title">Gold $1000</h5>
-                  <p class="card-text">For Medium Conference 200 Participants</p>
+                  <h5 class="card-title">Silver $500</h5>
+                  <p class="card-text">For Small Conference 80 Participants</p>
                   <p class="card-text">HYBRID</p>
-                  <a href="/registerconference3"><button type="submit" class="btn btn-primary">Register</button></a>
+                  <a href="/registerconference2"><button type="submit" class="btn btn-primary">Register</button></a>
                 </div>
-            </div><br>
-            <div class="card" style="width: 18rem;">
+              </div><br>
+          </div>
+          <div class="col">
+              <div class="card" style="width: 25rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Gold $1000</h5>
+                    <p class="card-text">For Medium Conference 200 Participants</p>
+                    <p class="card-text">HYBRID</p>
+                    <a href="/registerconference3"><button type="submit" class="btn btn-primary">Register</button></a>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 25rem;">
               <div class="card-body">
                 <h5 class="card-title">Platinum $1200</h5>
                 <p class="card-text">For Medium Conference 300 Participants</p>
                 <p class="card-text">HYBRID</p>
                 <a href="/registerconference4"><button type="submit" class="btn btn-primary">Register</button></a>
               </div>
-            </div><br>
+            </div>
+          </div>
         </div>
       </div>
-    {{-- <div class="card" style="width: 18rem;">
-      <div class="card-body" style="background-color: #F8EDFF">
-        <h5 class="card-title">Trial for Free</h5>
-        <p class="card-text">For Small Conference 8-10 Participants</p>
-        <p class="card-text">ONLINE</p>
-        <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
-      </div>
-  </div> --}}
   </main>
 </section>
 @endsection

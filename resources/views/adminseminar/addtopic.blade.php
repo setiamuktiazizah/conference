@@ -58,6 +58,7 @@
               
               <br>
               <div class="modal-footer">
+                <a href="{{url('registerconference')}} "><button class="btn btn-primary">Back</button></a>
                 <button type="button" class="btn btn-secondary">+ Add Another Topic</button>
                 <a href="{{url('timescheduling')}}"><button type="button" class="btn btn-primary">Next</button></a>
               </div>
