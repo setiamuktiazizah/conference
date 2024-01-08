@@ -40,7 +40,9 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Institution</th>
-                        <th>Action</th>
+                        <th>NIB</th>
+                        <th colspan="2">Action</th>
+                        <th>Send Email</th>
                     </thead>
                     <tbody>
                       @foreach ($users as $user)     
@@ -48,10 +50,26 @@
                           <td>{{$user->name}}</td> 
                           <td>{{$user->email}}</td>
                           <td>{{$user->institution}}</td>
+                          <td>{{$user->nib}} </td>
+                          <div class="text-center align-middle">
+                            <form method="POST" action="{{ route('updatePartnerStatus', $user->id) }}">
+                                @csrf
+                                @method('PUT')
+
+                                <td class="form-group">
+                                    <select name="status" class="form-control {{ $user->is_partner ? 'status-accepted' : 'status-rejected' }} ">
+                                        <option value="accepted" {{ $user->is_partner ? '' : 'selected' }}>Accepted</option>
+                                        <option value="rejected" {{ $user->is_partner ? '' : 'selected' }}>Rejected</option>
+                                    </select>
+                                </td>
+                                <td class="form-group">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </td>
+                            </form>
+                        </div>
                           <td class="text-center align-middle">
-                            <button class="btn btn-primary"><i class="bi bi-plus-circle"></i></button>
-                            <button class="btn btn-primary"><i class="bi bi-dash-circle"></i></button>
-                        </td>
+                            <button class="btn btn-secondary"><i class="bi bi-envelope"></i></button>
+                          </td>
                         </tr>
                       @endforeach
                     </tbody>

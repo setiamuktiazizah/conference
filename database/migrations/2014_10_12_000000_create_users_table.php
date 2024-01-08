@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('institution');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('institution')->nullable();
+            $table->string('nib')->nullable();
             $table->boolean('is_partner');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();

@@ -9,6 +9,7 @@ use App\Http\Controllers\Guestlistcontroller;
 use App\Http\Controllers\ListOfConferenceController;
 use App\Http\Controllers\ListofPartnerController;
 use App\Http\Controllers\ArticleforReviewerController;
+use App\Http\Controllers\PartnerConferenceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\AddSponsorController;
@@ -25,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// User
+
 Route::get('/', function () {
     return view('home');
 });
@@ -35,9 +38,29 @@ Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
-Route::get('/bundling', function () {
-    return view('bundling');
+// Admin
+
+Route::get('/auth-admin', function () {
+    return view('admin.dashboard');
 });
+
+Route::get('/accpartner', [ListofPartnerController::class, 'GetAllPartner']);
+
+Route::put('/update-partner-status/{userId}', [ListofPartnerController::class, 'updatePartnerStatus'])->name('updatePartnerStatus');
+
+
+// Partner
+Route::get('/registerpartner', function () {
+    return view('partner.registerpartner');
+});
+
+Route::post('/registerpartner', [RegisterController::class, 'registerpartner']);
+
+Route::get('/bundling', function () {
+    return view('partner.bundling');
+});
+
+Route::post('/bundling', [PartnerConferenceController::class, 'packet']);
 
 Route::get('/registerconference', function () {
     return view('adminseminar.registerconference');
@@ -108,15 +131,9 @@ Route::get('/payment4', function () {
 });
 
 
-Route::get('/accpartner', [ListofPartnerController::class, 'GetAllPartner']);
-
 
 Route::get('/help', function () {
     return view('user.help');
-});
-
-Route::get('/registerpartner', function () {
-    return view('registerpartner');
 });
 
 Route::get('/conferencedetail', function () {
@@ -147,16 +164,10 @@ Route::get('/registerpart3', function () {
     return view('user.register-part-3');
 });
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-});
 
-Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser']) -> name('admin.guestlist.list');
+Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser'])->name('admin.guestlist.list');
 
-Route::get('/edituser/{user}', [Guestlistcontroller::class, 'GetDataUser'])->name('admin.guestlist.getdata');
-Route::post('/edituser/{user}', [Guestlistcontroller::class, 'EditUser'])->name('admin.guestlist.edit');
-
-Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser']) -> name('admin.guestlist.hapus');
+Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser'])->name('admin.guestlist.hapus');
 
 
 Route::get('/articlereviewer/{user}', [ArticleforReviewerController::class, 'GetAllArtcileforReviewer']);
@@ -166,15 +177,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/login', function () {
-    return view('user/login');
-});
-
 Route::post('/login', [LoginController::class, 'auth']);
-
-Route::get('/signup', function () {
-    return view('user/signup');
-});
 
 Route::post('/signup', [RegisterController::class, 'register']);
 
@@ -195,7 +198,6 @@ Route::get('/submitaddauthor', function () {
 // Route::get('/listofconference', function () {
 //     return view('admin.listofconference');
 // });
-
 
 Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');

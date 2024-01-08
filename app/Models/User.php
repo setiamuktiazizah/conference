@@ -24,6 +24,8 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'institution',
+        'nib',
+        'is_partner',
         'created_by',
         'updated_at',
         'created_at'
@@ -48,4 +50,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function roleOwner()
+    {
+        return $this->hasmany(RoleOwner::class);
+    }
 }

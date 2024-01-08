@@ -14,6 +14,8 @@ class Reviewer extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function Conference(): BelongsToMany
     {
         return $this->belongsToMany(Conference::class);

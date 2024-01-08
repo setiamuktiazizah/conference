@@ -14,6 +14,8 @@ class Author extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function User(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
