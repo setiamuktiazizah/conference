@@ -87,6 +87,6 @@ class OrderController extends Controller
         $payment = Payment::where('id', $id)->first();
         $id_user = $payment->user_id;
         $user = User::where('id', $id_user)->first();
-        return view('user/invoice', compact('payment', 'user'));
+        return view('user.invoice', compact('payment', 'user'));
     }
 }

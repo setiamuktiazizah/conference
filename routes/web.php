@@ -62,6 +62,9 @@ Route::get('/bundling', function () {
 });
 
 Route::post('/bundling', [PartnerConferenceController::class, 'packet']);
+Route::get('/partner/{id}', [PartnerConferenceController::class, 'partner']);
+Route::get('listConference/{id}', [PartnerConferenceController::class, 'listConference'])->name('listConference');
+
 
 Route::get('/registerconference', function () {
     return view('adminseminar.registerconference');
