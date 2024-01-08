@@ -10,6 +10,9 @@ use App\Http\Controllers\ListOfConferenceController;
 use App\Http\Controllers\ListofPartnerController;
 use App\Http\Controllers\ArticleforReviewerController;
 use App\Http\Controllers\PartnerConferenceController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\AddSponsorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,10 +38,6 @@ Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
-Route::get('/bundling', function () {
-    return view('bundling');
-});
-
 // Admin
 
 Route::get('/auth-admin', function () {
@@ -51,8 +50,15 @@ Route::put('/update-partner-status/{userId}', [ListofPartnerController::class, '
 
 
 // Partner
+Route::get('/registerpartner', function () {
+    return view('partner.registerpartner');
+});
 
 Route::post('/registerpartner', [RegisterController::class, 'registerpartner']);
+
+Route::get('/bundling', function () {
+    return view('partner.bundling');
+});
 
 Route::post('/bundling', [PartnerConferenceController::class, 'packet']);
 
@@ -197,10 +203,18 @@ Route::get('/submituploadreviewmanuscript', function () {
     return view('submituploadreviewmanuscript');
 });
 
-Route::get('/konfigurasipembayaran', function () {
+Route::get('/paymentconfiguration', function () {
     return view('bendahara.konfigurasi');
 });
 
-Route::get('/paymentstatus', function () {
-    return view('bendahara.paymentstatus');
-});
+Route::get('/paymentstatus', [PaymentController::class, 'index']);
+
+Route::post('/addsponsors', [AddSponsorController::class, 'upload'])->name('upload');
+Route::get('/addsponsors', [AddSponsorController::class, 'index']);
+
+Route::get('/sponsors', [SponsorController::class, 'index']);
+Route::delete('/deleteSponsor/{id}', [SponsorController::class, 'destroy'])->name('deleteSponsor');
+
+// Route::get('/sponsors', function () {
+//     return view('adminseminar.sponsors');
+// });

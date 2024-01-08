@@ -15,6 +15,13 @@ class Sponsor extends Model
 
     protected $guarded = ['id'];
 
+    protected $fillable = [
+        'logo',
+        'conference_id',
+        'name',
+        'created_by',
+    ];
+
     public function Conference(): BelongsToMany
     {
         return $this->belongsToMany(Conference::class);

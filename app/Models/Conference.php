@@ -71,9 +71,9 @@ class Conference extends Model
         return $this->belongsTo(Schedule::class);
     }
 
-    public function Sponsor(): HasMany
+    public function Sponsor(): BelongsToMany
     {
-        return $this->hasMany(Sponsor::class);
+        return $this->belongsToMany(Sponsor::class);
     }
 
     // public function Topic(): BelongsToMany
