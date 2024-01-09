@@ -190,6 +190,10 @@ Route::get('/invoice/{id}', [OrderController::class, 'invoice']);
 
 Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser'])->name('admin.guestlist.list');
 
+Route::get('/userlist/{user}', [Guestlistcontroller::class, 'GetDataUser'])->name('admin.guestlist.GetDataUser');
+
+Route::post('/userlist/{user}/edit', [Guestlistcontroller::class, 'EditUser'])->name('admin.guestlist.edit');
+
 Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser'])->name('admin.guestlist.hapus');
 
 
