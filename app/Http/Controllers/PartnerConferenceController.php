@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class PartnerConferenceController extends Controller
 {
     //
-    public function packet(){
-        $packet = PriceConference::
+    public function packet()
+    {
+        $packets = PriceConference::all();
+        return view('partner.bundling', compact('packets'));
     }
 }

@@ -14,6 +14,7 @@ use App\Http\Controllers\PartnerConferenceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\AddSponsorController;
+use App\Http\Controllers\RegisterConferenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Guest
+Route::get('/login', function () {
+    return view('user.login');
+});
+
+Route::get('/signup', function () {
+    return view('user.signup');
+});
+
+Route::post('/login', [LoginController::class, 'auth']);
+
+Route::post('/signup', [RegisterController::class, 'register']);
 
 // User
 
@@ -63,9 +77,18 @@ Route::get('/bundling', function () {
 
 Route::post('/bundling', [PartnerConferenceController::class, 'packet']);
 
-Route::get('/registerconference', function () {
-    return view('adminseminar.registerconference');
+// Route::get('/registerconference', function () {
+//     return view('partner.registerconference');
+// });
+
+Route::get('/registerconference', [RegisterConferenceController::class, 'index']);
+
+Route::get('/timescheduling', function () {
+    return view('partner.timescheduling');
 });
+
+Route::resource('registerconferences', RegisterConferenceController::class);
+
 
 Route::get('/registerconference2', function () {
     return view('adminseminar.registerconference2');
@@ -77,28 +100,6 @@ Route::get('/registerconference3', function () {
 
 Route::get('/registerconference4', function () {
     return view('adminseminar.registerconference4');
-});
-
-
-Route::get('/addtopic', function () {
-    return view('adminseminar.addtopic');
-});
-
-Route::get('/addtopic2', function () {
-    return view('adminseminar.addtopic2');
-});
-
-Route::get('/addtopic3', function () {
-    return view('adminseminar.addtopic3');
-});
-
-Route::get('/addtopic4', function () {
-    return view('adminseminar.addtopic4');
-});
-
-
-Route::get('/timescheduling', function () {
-    return view('adminseminar.timescheduling');
 });
 
 Route::get('/timescheduling2', function () {
@@ -182,10 +183,6 @@ Route::get('/articlereviewer/{user}', [ArticleforReviewerController::class, 'Get
 Route::get('/contact', function () {
     return view('contact');
 });
-
-Route::post('/login', [LoginController::class, 'auth']);
-
-Route::post('/signup', [RegisterController::class, 'register']);
 
 Route::get('/listofconference', [ListOfConferenceController::class, 'index']);
 

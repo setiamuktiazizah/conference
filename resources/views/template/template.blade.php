@@ -14,7 +14,7 @@
 
   <!-- Favicons -->
   {{-- <link href="{{asset('assets/img/favicon.png')}}" rel="icon"> --}}
-  <link href="{{asset('images\logo.png')}}" rel="icon">
+  <link href="{{asset('images\logo webdemia.png')}}" rel="icon">
   <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 

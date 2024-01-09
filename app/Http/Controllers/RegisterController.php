@@ -13,6 +13,8 @@ class RegisterController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'max:50', 'min:1'],
+            'first_name' => ['required', 'max:50', 'min:1'],
+            'last_name' => ['required', 'max:50', 'min:1'],
             'institution' => ['required', 'max:50', 'min:1'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required'],
@@ -20,9 +22,8 @@ class RegisterController extends Controller
 
         $validatedData['password'] = hash::make($validatedData['password']);
 
-        $user = User::create($validatedData);
-        $user->roleOwner()->create(['role_id' => 4, 'created_by' => $user->id]);
-        
+        User::create($validatedData);
+        // $user->roleOwner()->create(['role_id' => 4, 'created_by' => $user->id])
 
         return redirect('/');
     }

@@ -27,6 +27,7 @@ class Conference extends Model
 {
     protected $table = "conferences";
     protected $primaryKey = 'id';
+    protected $guarded = ['id'];
 
     use HasFactory;
 
