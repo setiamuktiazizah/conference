@@ -91,8 +91,8 @@ class Conference extends Model
         return $this->hasMany(PriceConference::class);
     }
 
-    public function Payment(): BelongsTo
+    public function Payment(): HasOne
     {
-        return $this->belongsTo(Payment::class);
+        return $this->hasOne(Payment::class);
     }
 }

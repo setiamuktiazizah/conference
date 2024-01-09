@@ -47,8 +47,8 @@ class RegisterConferenceController extends Controller
             'url' => $request->input('url'),
             'logo' => 'http',
             'timezone' => Carbon::now(),
-            'created_by' => auth()->user()->id,
-            'updated_by' => auth()->user()->id,
+            'created_by' => 1,
+            'updated_by' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

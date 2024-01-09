@@ -18,14 +18,19 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
  
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('user')->attempt($credentials)) {
             $request->session()->regenerate();
- 
+
             return redirect()->intended('/');
         }
  
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
+    }
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::guard('user')->logout();
+        return redirect()->route('login');
     }
 }

@@ -21,12 +21,12 @@
     <div class="container-quotes">
       <table class="table table-bordered data-table" id="data-table">
           <thead>
-              <th>Area</th>
+              <th>Topic</th>
               <th>Conference</th>
               <th>Venue</th>
               <th>When</th>
-              <th>Deadline</th>
-              <th>Submit</th>
+              <th>Packege</th>
+              <th colspan="2">Status</th>
           </thead>
           <tbody>
             @foreach ($conferences as $conference)     
@@ -35,9 +35,22 @@
                 <td>{{$conference->name}}</td>
                 <td>{{$conference->venue}}</td>
                 <td>{{$conference->Schedule->start_date}}</td>
-                <td>{{$conference->Schedule->end_date}} </td>
-                <td a class="text-center align-middle"><a href="{{ route('submit.register.paper', $conference->id) }}"><button class="btn btn-primary">
-                  <i class="fas fa-plus"></i>
+                <td a class="text-center align-middle"><a href="{{ route('bundling', ['id' => $conference->id]) }}"><button class="btn btn-primary">
+                  Choose
+                </button></a></td>
+                <td class="text-center align-middle">
+                    @if($conference->Payment->status == 'paid')
+                        <button class="btn btn-success">
+                            Paid
+                        </button>
+                    @else
+                        <button class="btn btn-danger">
+                            Unpaid
+                        </button>
+                    @endif
+                </td>
+                <td a class="text-center align-middle"><a href="{{url('submitregisterpaper')}}"><button class="btn btn-primary">
+                  Pay Now</i>
                 </button></a></td>
               </tr>
             @endforeach
