@@ -23,7 +23,7 @@
             <button style="top: 160px; left: 900px; position: absolute; font-family: 'Roboto', sans serif; font-size: 10.7px; font-weight: bold; background-color: #B8DBE9; width: 140px; color: #293677"><i class="bi bi-facebook"></i> Sign up with Facebook</button>
             <div style="top: 200px; left: 880px; position: absolute; font-family: 'Roboto', sans serif; font-size: 30px; font-weight: bold; color: #293677">Or</div>
             
-            <form method="POST" action="/signup">
+            <form method="POST" action="{{ route('signup') }}">
             @csrf
                 <div style="top: 250px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 18px; font-weight: bold; color: #293677">Name</div>
                 <input type="text"  name = "name" id="name" style="top: 275px; left: 740px; position: absolute; font-family: 'Roboto', sans serif; font-size: 18px; font-weight: normal; color: #293677; width: 300px; background-color:#B8DBE9; border-style: solid; border-width: 2.5px; border-color: #293677">

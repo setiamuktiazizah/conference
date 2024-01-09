@@ -37,9 +37,9 @@ Route::get('/signup', function () {
     return view('user.signup');
 });
 
-Route::post('/login', [LoginController::class, 'auth'])->name('login');;
+Route::post('/login', [LoginController::class, 'auth'])->name('login');
 
-Route::post('/signup', [RegisterController::class, 'register']);
+Route::post('/signup', [RegisterController::class, 'register'])->name('signup');
 
 
 // User
