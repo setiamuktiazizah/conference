@@ -24,7 +24,7 @@
            Register Conference
           </a>
         </div>
-        <div class="col">
+        {{-- <div class="col">
           <a href="{{url('addtopic')}}">
           <i class="bi bi-person-fill-add"></i>
           Add Topic
@@ -35,7 +35,7 @@
           <i class="bi bi-file-arrow-up"></i>
           Time Scheduling
           </a>
-        </div>
+        </div> --}}
       </div>
       <br>
       <form action="{{ route('registerconferences.store') }}" method="POST">

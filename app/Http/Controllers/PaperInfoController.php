@@ -12,7 +12,7 @@ class PaperInfoController extends Controller
     //
     public function index(Request $request)
     {
-        $articles = Article::with('Conference', 'ReviewArticle')->get();
+        $articles = Article::with('Conference')->get();
         return view('user.paperinfo', ['articles' => $articles]);
     }
 }

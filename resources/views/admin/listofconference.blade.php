@@ -42,7 +42,7 @@
                         <th>Venue</th>
                         <th>When</th>
                         <th>Deadline</th>
-                        <th>Submit</th>
+                        {{-- <th>Submit</th> --}}
                     </thead>
                     <tbody>
                       @foreach ($conferences as $conference)     
@@ -52,9 +52,9 @@
                           <td>{{$conference->venue}}</td>
                           <td>{{$conference->Schedule->start_date}}</td>
                           <td>{{$conference->Schedule->end_date}} </td>
-                          <td class="text-center align-middle"><button class="btn btn-primary">
+                          {{-- <td class="text-center align-middle"><button class="btn btn-primary">
                             <i class="fas fa-plus"></i>
-                          </button></td>
+                          </button></td> --}}
                         </tr>
                       @endforeach
                     </tbody>
