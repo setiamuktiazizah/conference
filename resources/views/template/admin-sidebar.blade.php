@@ -10,7 +10,7 @@
         </li>
         <li class="nav-item">
             <a href="/userlist" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-user"></i>
                 <p>
                     Management User
                 </p>
@@ -18,7 +18,7 @@
         </li>
         <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-calendar-alt"></i>
                 <p>
                     Schedule
                 </p>
@@ -26,7 +26,7 @@
         </li>
         <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-paper-plane"></i>
                 <p>
                     Broadcast
                 </p>
@@ -34,7 +34,7 @@
         </li>
         <li class="nav-item">
             <a href="/sponsors" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-building"></i>
                 <p>
                     Sponsorship
                 </p>
@@ -42,15 +42,15 @@
         </li>
         <li class="nav-item">
             <a href="/conference" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-video"></i>
                 <p>
                     Conference
                 </p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+            <a href="/article" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
                 <p>
                     Articles
                 </p>
@@ -58,7 +58,7 @@
         </li>
         <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-users"></i>
                 <p>
                     Reviewer
                 </p>
@@ -66,7 +66,7 @@
         </li>
         <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-table"></i>
                 <p>
                     Reviewer Ploting
                 </p>
@@ -82,7 +82,7 @@
         </li>
         <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-tasks"></i>
                 <p>
                     Configure Termin
                 </p>
@@ -90,7 +90,7 @@
         </li>
         <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-table"></i>
                 <p>
                     List of Payment
                 </p>

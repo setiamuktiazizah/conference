@@ -15,6 +15,7 @@ use App\Http\Controllers\PartnerConferenceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AddSponsorController;
 use App\Http\Controllers\RegisterConferenceController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -108,6 +109,9 @@ Route::delete('/deleteConference/{id}', [ConferenceController::class, 'destroy']
 
 Route::put('/update-partner-status/{userId}', [ListofPartnerController::class, 'updatePartnerStatus'])->name('updatePartnerStatus');
 
+// Article
+
+Route::get('/article', [ArticleController::class, 'index']);
 
 
 // Partner
