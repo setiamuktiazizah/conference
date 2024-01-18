@@ -19,7 +19,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <h2>List of Conference</h2>
+                        <h2>List of Sponsor</h2>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">

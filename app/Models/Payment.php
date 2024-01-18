@@ -40,4 +40,9 @@ class Payment extends Model
     {
         return $this->hasOne(Conference::class);
     }
+    
+    public static function generateUniqueOrderId()
+    {
+        return 'ORDER_' . now()->timestamp . '_' . uniqid();
+    }
 }

@@ -16,7 +16,7 @@
   <main id="main">
     <div class="container-quotes">
       <h3>Paper Authored in All Conferences</h3>
-        <table class="table table-bordered data-table">
+        <table class="table table-bordered data-table" id="data-table">
           <thead>
             <th>Conference</th>
             <th>Paper Title</th>

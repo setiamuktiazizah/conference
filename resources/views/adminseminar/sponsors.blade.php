@@ -23,8 +23,8 @@
                     </div>
                 </div>
 
-                <div class="text-center" style="margin-top: 20px;">
-                    <a href="{{url('/addsponsors')}}"><button type="button" class="btn btn-primary">+ Add a Sponsor</button></a>
+                <div style="margin-top: 20px;">
+                    <a href="{{url('/addsponsors')}}"><button type="button" class="btn btn-success">+ Add Sponsor</button></a>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                             <th class="text-center">Name</th>
                             <th class="text-center">Conference</th>
                             <th class="text-center">Logo</th>
-                            <th class="text-center">Actions</th>
+                            <th col="2" class="text-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,10 +50,11 @@
                                     @endif
                                 </td>
                                 <td class="text-center">
+                                    <a href="{{ url('/editsponsor/' . $sponsor->id) }}"><button class="btn btn-primary"><i class="bi bi-pencil"></i></button></a>
                                     <form action="{{ route('deleteSponsor', $sponsor->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

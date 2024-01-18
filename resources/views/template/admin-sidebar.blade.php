@@ -1,7 +1,7 @@
 <nav class="mt-2" style="background-color: #FD853A">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
-            <a href="/admin" class="nav-link">
+            <a href="/auth-admin" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Dashboard
@@ -12,7 +12,7 @@
             <a href="/userlist" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                    Managing User
+                    Management User
                 </p>
             </a>
         </li>
@@ -36,31 +36,15 @@
             <a href="/sponsors" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                    Add Sponsorship
+                    Sponsorship
                 </p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="/listofconference" class="nav-link">
+            <a href="/conference" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                    List of Conference
-                </p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                    List of Articles
-                </p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/bundling" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                    Register Conference
+                    Conference
                 </p>
             </a>
         </li>
@@ -68,7 +52,15 @@
             <a href="pages/widgets.html" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                    Register Reviewer
+                    Articles
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                    Reviewer
                 </p>
             </a>
         </li>

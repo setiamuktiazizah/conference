@@ -16,7 +16,7 @@
   <main id="main">
     <div class="container-quotes">
       <h3>Conferences open for registration</h3>
-        <table class="table table-bordered data-table">
+        <table class="table table-bordered data-table" id="data-table">
           <thead>
             <th style="text-align: center">Conference</th>
             <th style="text-align: center">Home Page</th>
@@ -50,7 +50,7 @@
       $(function() {
         var table = $('#data-table').DataTable();
       });
-      </script>
+    </script>
   </main>
 </section>
 @endsection

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;  
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Sponsor;
@@ -20,6 +20,40 @@ class SponsorController extends Controller
         $sponsors = Sponsor::hydrate($sponsors->toArray());
 
         return view('adminseminar.sponsors', ['sponsors' => $sponsors]);
+    }
+
+    public function edit($id)
+    {
+        $sponsor = Sponsor::findOrFail($id);
+        $conferences = Conference::all(); // Assuming you have a Conference model
+
+        return view('adminseminar.edit-sponsor', compact('sponsor', 'conferences'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'conference_id' => 'required',
+            'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $sponsor = Sponsor::findOrFail($id);
+
+        // Update the sponsor data
+        $sponsor->update([
+            'name' => $request->input('name'),
+            'conference_id' => $request->input('conference_id'),
+        ]);
+
+        // Update logo if a new one is provided
+        if ($request->hasFile('logo')) {
+            $logoPath = $request->file('logo')->store('logos', 'public');
+            Storage::delete($sponsor->logo);
+            $sponsor->update(['logo' => $logoPath]);
+        }
+
+        return redirect('/sponsors')->with('success', 'Sponsor updated successfully');
     }
 
     public function destroy($id)

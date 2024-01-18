@@ -38,13 +38,6 @@
                     <h5>Institution</h5>
                         <input type="text" name="institution" id="institution" value="{{$user -> institution}}">
 
-                    <h5>Role</h5>
-                        <ul>
-                            <li>Admin Secretary</li>
-                            <li>Admin Seminar</li>
-                            <li>Reviewer</li>
-                        </ul>
-
                     <div>
                         <button type="submit"> Save </button>
                     </div>

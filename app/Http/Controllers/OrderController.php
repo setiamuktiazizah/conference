@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\User;
 use App\Models\Payment;
+use Midtrans\Config;
 
 class OrderController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('home');
     }
-    public function checkout($nib){
+    public function checkout($nib)
+    {
         $user = User::where('nib', $nib)->first();
         $userName = $user->name;
 
@@ -27,9 +30,9 @@ class OrderController extends Controller
             'value' => 100,
             'payment_receipt' => $receipt,
             'payment_date' => now(),
-            'status' => 'unpaid', 
-            'created_by' => 1, 
-            'updated_by' => 1,   
+            'status' => 'unpaid',
+            'created_by' => 1,
+            'updated_by' => 1,
         ];
 
         $payment = Payment::create($payment_data);
@@ -69,21 +72,23 @@ class OrderController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         return view('user/checkout', compact('snapToken', 'payment', 'user'));
     }
-    public function callback(Request $request){
+    public function callback(Request $request)
+    {
         $serverKey = config('midtrans.server_key');
-        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
-        if($hashed == $request->signature_key){
-            if($request->transaction_status == 'capture'){
+        $hashed = hash("sha512", $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
+        if ($hashed == $request->signature_key) {
+            if ($request->transaction_status == 'capture') {
                 $order = Payment::find($request->order_id);
                 $order->update(['status' => 'paid']);
             }
-            if($request->transaction_status == 'pending'){
+            if ($request->transaction_status == 'pending') {
                 $order = Payment::find($request->order_id);
                 $order->update(['status' => 'pending']);
             }
         }
     }
-    public function invoice($id){
+    public function invoice($id)
+    {
         $payment = Payment::where('id', $id)->first();
         $id_user = $payment->user_id;
         $user = User::where('id', $id_user)->first();

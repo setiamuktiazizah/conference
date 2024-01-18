@@ -8,7 +8,7 @@ use App\Http\Controllers\PaperInfoController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\Guestlistcontroller;
 use App\Http\Controllers\SponsorController;
-use App\Http\Controllers\ListOfConferenceController;
+use App\Http\Controllers\ConferenceController;
 use App\Http\Controllers\ListofPartnerController;
 use App\Http\Controllers\ArticleforReviewerController;
 use App\Http\Controllers\PartnerConferenceController;
@@ -37,9 +37,9 @@ Route::get('/signup', function () {
     return view('user.signup');
 });
 
-Route::post('/login', [LoginController::class, 'auth'])->name('login');;
+Route::post('/login', [LoginController::class, 'auth'])->name('login');
 
-Route::post('/signup', [RegisterController::class, 'register']);
+Route::post('/signup', [RegisterController::class, 'register'])->name('signup');
 
 
 // User
@@ -62,15 +62,52 @@ Route::get('/paperinfo', [PaperInfoController::class, 'index'])->name('paperinfo
 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 
-// Admin
+/* Admin */
 
 Route::get('/auth-admin', function () {
     return view('admin.dashboard');
 });
 
+Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser'])->name('admin.guestlist.list');
+
+Route::get('/userlist/{user}', [Guestlistcontroller::class, 'GetDataUser'])->name('admin.guestlist.GetDataUser');
+
+Route::post('/userlist/{user}/edit', [Guestlistcontroller::class, 'EditUser'])->name('admin.guestlist.edit');
+
+Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser'])->name('admin.guestlist.hapus');
+
 Route::get('/accpartner', [ListofPartnerController::class, 'GetAllPartner']);
 
+// Sponsor
+
+Route::get('/sponsors', [SponsorController::class, 'index'])->name('sponsor');
+
+Route::post('/addsponsors', [AddSponsorController::class, 'upload'])->name('upload');
+
+Route::get('/addsponsors', [AddSponsorController::class, 'index']);
+
+Route::get('/editsponsor/{id}', [SponsorController::class, 'edit'])->name('editSponsor');
+
+Route::put('/updatesponsor/{id}', [SponsorController::class, 'update'])->name('updateSponsor');
+
+Route::delete('/deleteSponsor/{id}', [SponsorController::class, 'destroy'])->name('deleteSponsor');
+
+// Conference
+
+Route::get('/conference', [ConferenceController::class, 'index']);
+
+Route::get('/addconference', [ConferenceController::class, 'create'])->name('addConference');
+
+Route::post('/storeconference', [ConferenceController::class, 'store'])->name('storeConference');
+
+Route::get('/editconference/{id}', [ConferenceController::class, 'edit'])->name('editConference');
+
+Route::put('/updateconference/{id}', [ConferenceController::class, 'update'])->name('updateConference');
+
+Route::delete('/deleteConference/{id}', [ConferenceController::class, 'destroy'])->name('deleteConference');
+
 Route::put('/update-partner-status/{userId}', [ListofPartnerController::class, 'updatePartnerStatus'])->name('updatePartnerStatus');
+
 
 
 // Partner
@@ -79,6 +116,10 @@ Route::get('/registerpartner', function () {
 });
 
 Route::post('/registerpartner', [RegisterController::class, 'registerpartner']);
+
+Route::post('/checkout', [OrderController::class, 'checkout']);
+
+Route::get('/checkout/{nib}', [OrderController::class, 'checkout']);
 
 Route::get('/bundling', function () {
     return view('partner.bundling');
@@ -102,9 +143,6 @@ Route::get('/timescheduling', function () {
 });
 
 Route::resource('registerconferences', RegisterConferenceController::class);
-
-Route::get('/sponsorlist', [SponsorController::class, 'index'])->name('schedule');
-
 
 Route::get('/registerconference2', function () {
     return view('adminseminar.registerconference2');
@@ -170,29 +208,9 @@ Route::get('/user-chairing', function () {
     return view('user.user-chairing');
 });
 
-Route::get('/registerpart1', function () {
-    return view('user.register-part-1');
-});
-
-Route::get('/registerpart2', function () {
-    return view('user.register-part-2');
-});
-
-Route::get('/registerpart3', function () {
-    return view('user.register-part-3');
-});
-
-// Route::post('/checkout', [OrderController::class, 'checkout']);
-Route::get('/checkout/{nib}', [OrderController::class, 'checkout']);
-
-Route::get('/invoice/{id}', [OrderController::class, 'invoice']);
 
 
-Route::get('/userlist', [Guestlistcontroller::class, 'GetAllUser'])->name('admin.guestlist.list');
-
-Route::get('/userlist/{user}', [Guestlistcontroller::class, 'GetDataUser'])->name('admin.guestlist.getdata');
-
-Route::post('/deleteuser/{user}', [Guestlistcontroller::class, 'DeleteUser'])->name('admin.guestlist.hapus');
+// Route::get('/invoice/{id}', [OrderController::class, 'invoice']);
 
 
 Route::get('/articlereviewer/{user}', [ArticleforReviewerController::class, 'GetAllArtcileforReviewer']);
@@ -201,8 +219,6 @@ Route::get('/articlereviewer/{user}', [ArticleforReviewerController::class, 'Get
 Route::get('/contact', function () {
     return view('contact');
 });
-
-Route::get('/listofconference', [ListOfConferenceController::class, 'index']);
 
 // Route::get('/paperinfo', function () {
 //     return view('paperinfo');
@@ -220,11 +236,6 @@ Route::get('/paymentconfiguration', function () {
 
 Route::get('/paymentstatus', [PaymentController::class, 'index']);
 
-Route::post('/addsponsors', [AddSponsorController::class, 'upload'])->name('upload');
-Route::get('/addsponsors', [AddSponsorController::class, 'index']);
-
-Route::get('/sponsors', [SponsorController::class, 'index']);
-Route::delete('/deleteSponsor/{id}', [SponsorController::class, 'destroy'])->name('deleteSponsor');
 
 // Route::get('/sponsors', function () {
 //     return view('adminseminar.sponsors');
