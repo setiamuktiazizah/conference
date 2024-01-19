@@ -14,6 +14,12 @@ class OrderController extends Controller
     {
         return view('home');
     }
+
+    // public function bundling()
+    // {
+
+    // }
+
     public function checkout($nib)
     {
         $user = User::where('nib', $nib)->first();

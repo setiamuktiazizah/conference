@@ -17,6 +17,14 @@
             <a href="/registerpartner"><button type="register" class="btn btn-primary">Register</button></a>
           </div>
         </div>
+        <br><br>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Register Conference</h5>
+            <p class="card-text">Be Webdemia's partner and Register Your Conference</p>
+            <a href="/registerconference"><button type="register" class="btn btn-primary">Register</button></a>
+          </div>
+        </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
 

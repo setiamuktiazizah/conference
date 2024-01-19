@@ -30,7 +30,7 @@
                 <h5 class="card-title">Trial for Free</h5>
                 <p class="card-text">For Small Conference 10 Participants</p>
                 <p class="card-text">ONLINE</p>
-                <a href="/registerconference"><button type="submit" class="btn btn-primary">Register</button></a>
+                <a href="/checkout"><button type="submit" class="btn btn-primary">Pay</button></a>
               </div>
             </div><br>
           </div>
@@ -40,7 +40,7 @@
                   <h5 class="card-title">Silver $500</h5>
                   <p class="card-text">For Small Conference 80 Participants</p>
                   <p class="card-text">HYBRID</p>
-                  <a href="/registerconference2"><button type="submit" class="btn btn-primary">Register</button></a>
+                  <a href="#"><button type="submit" class="btn btn-primary">Pay</button></a>
                 </div>
               </div><br>
           </div>
@@ -50,7 +50,7 @@
                     <h5 class="card-title">Gold $1000</h5>
                     <p class="card-text">For Medium Conference 200 Participants</p>
                     <p class="card-text">HYBRID</p>
-                    <a href="/registerconference3"><button type="submit" class="btn btn-primary">Register</button></a>
+                    <a href="/checkout"><button type="submit" class="btn btn-primary">Pay</button></a>
                   </div>
               </div>
           </div>
@@ -60,7 +60,7 @@
                 <h5 class="card-title">Platinum $1200</h5>
                 <p class="card-text">For Medium Conference 300 Participants</p>
                 <p class="card-text">HYBRID</p>
-                <a href="/registerconference4"><button type="submit" class="btn btn-primary">Register</button></a>
+                <a href="/paymentstatus"><button type="submit" class="btn btn-primary">Pay</button></a>
               </div>
             </div>
           </div>

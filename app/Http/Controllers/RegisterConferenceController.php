@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Topic;
 use App\Models\Conference;
 use App\Models\Schedule;
+use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class RegisterConferenceController extends Controller
 {
@@ -77,5 +79,18 @@ class RegisterConferenceController extends Controller
 
         // Redirect to the next step or a different page
         return redirect('/');
+    }
+
+    public function confhistory(Request $request, User $user)
+    {
+        $userid = $user->id;
+
+        $conferences = DB::table('conferences')
+            ->join('payments', 'payments.conference_id', '=', 'conferences.id')
+            ->select('conferences.id as id', 'conferences.name as name', 'conferences.created_at as created_date', 'conferences.logo as logo', 'payments.status as status')
+            ->where('conferences.created_by', '=', $userid)
+            ->get();
+
+        return view('partner.conferencehistory', compact('conferences'));
     }
 }

@@ -16,6 +16,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AddSponsorController;
 use App\Http\Controllers\RegisterConferenceController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -119,15 +120,27 @@ Route::get('/registerpartner', function () {
     return view('partner.registerpartner');
 });
 
+Route::get('/registerconference', [RegisterConferenceController::class, 'index']);
+
+Route::get('/registerconference/{user}', [RegisterConferenceController::class, 'confhistory']);
+
 Route::post('/registerpartner', [RegisterController::class, 'registerpartner']);
+
+Route::get('/bundling', [OrderController::class, 'bundling']);
 
 Route::post('/checkout', [OrderController::class, 'checkout']);
 
-Route::get('/checkout/{nib}', [OrderController::class, 'checkout']);
+Route::get('/checkout/{nib}', [OrderController::class, 'checkout'])->name('checkoutConference');
+
+Route::get('/invoice/{id}', [OrderController::class, 'invoice']);
 
 Route::get('/bundling', function () {
     return view('partner.bundling');
 });
+
+Route::post('/create-payment', [CheckoutController::class, 'createPayment']);
+
+Route::post('/midtrans-callback', [CheckoutController::class, 'handleCallback']);
 
 Route::get('/bundling/{id}', [PartnerConferenceController::class, 'bundling'])->name('bundling');
 
@@ -139,8 +152,6 @@ Route::get('listConference/{id}', [PartnerConferenceController::class, 'listConf
 // Route::get('/registerconference', function () {
 //     return view('partner.registerconference');
 // });
-
-Route::get('/registerconference', [RegisterConferenceController::class, 'index']);
 
 Route::get('/timescheduling', function () {
     return view('partner.timescheduling');
@@ -211,10 +222,6 @@ Route::get('/user-profile/edit', function () {
 Route::get('/user-chairing', function () {
     return view('user.user-chairing');
 });
-
-
-
-// Route::get('/invoice/{id}', [OrderController::class, 'invoice']);
 
 
 Route::get('/articlereviewer/{user}', [ArticleforReviewerController::class, 'GetAllArtcileforReviewer']);
