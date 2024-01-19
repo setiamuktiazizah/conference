@@ -1,0 +1,43 @@
+body{
+  font-family: Arial, sans-serif;
+  background-image: url('../images/office.png');
+  background-size: auto 98%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 200vh;
+  padding-top: 20px;
+}
+
+.nama-logo {
+  font-family: 'Roboto', sans-serif; 
+  font-size: 30px;
+  color: #293677;
+  font-weight: bold;
+  top: 20px;
+  left: 80px;
+  position: absolute;
+}
+
+.container {
+  display: flex;
+}
+
+.left-column {
+  flex: 1; /* Kolom kiri akan mengisi 1 bagian dari flex container */
+  padding: 20px;
+}
+
+.right-column {
+  flex: 1; /* Kolom kanan akan mengisi 1 bagian dari flex container */
+  padding: 20px;
+}
+
+.gambar-kiri {
+  max-width: 100%; /* Gambar di kolom kanan akan mengisi lebar maksimum kolom */
+  height: auto;
+}

@@ -1,0 +1,56 @@
+/* Gaya untuk col-1 ketika tautan anak memiliki kelas active */
+.navbar .col-1 a.active {
+    /* Misalnya, ubah warna latar belakang col-1 menjadi biru */
+    background-color: #293677;
+    color: white; /* Ubah warna teks menjadi putih jika diperlukan */
+    border-radius: 15px;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+}
+
+/* Gaya untuk col-2 ketika tautan anak memiliki kelas active */
+.navbar .col-2 a.active {
+    /* Misalnya, ubah warna latar belakang col-2 menjadi biru */
+    background-color: #293677;
+    color: white; /* Ubah warna teks menjadi putih jika diperlukan */
+    border-radius: 15px;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+}
+
+.container-quotes {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+.faq-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding-left: 20px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.top-right {
+    margin-left: 900px;
+}

@@ -1,0 +1,9 @@
+.status-accepted {
+    color: white;
+    background-color: green;
+}
+
+.status-rejected {
+    color: white;
+    background-color: red;
+}
