@@ -39,7 +39,7 @@ class PaymentFactory extends Factory
             'value' => $this->faker->randomFloat(2, 50, 500),
             'payment_receipt' => $this->faker->word . '.pdf', // Assuming payment receipt is a file name
             'payment_date' => $this->faker->dateTimeThisYear(),
-            'status' => $this->faker->randomElement(['paid','unpaid']),
+            'status' => $this->faker->randomElement(['Pending', 'Success', 'Failed']),
             'created_by' => 1, // Ganti dengan ID pengguna yang valid
             'updated_by' => null,
         ];
