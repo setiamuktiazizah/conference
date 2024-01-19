@@ -142,6 +142,8 @@ Route::get('listConference/{id}', [PartnerConferenceController::class, 'listConf
 
 Route::get('/registerconference', [RegisterConferenceController::class, 'index']);
 
+Route::get('/registerconference/{user}', [RegisterConferenceController::class, 'confhistory']);
+
 Route::get('/timescheduling', function () {
     return view('partner.timescheduling');
 });
